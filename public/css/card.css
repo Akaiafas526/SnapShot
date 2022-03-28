@@ -1,0 +1,47 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-image: url('../images/darkgb.jpeg');
+    background-size: 2050px 1100px;
+    background-repeat: no-repeat;
+}
+.nav a{
+    color: white;
+}
+
+.card-box{
+    border: 3px solid black;
+    border-radius: 30px;
+    width: 370px;
+    margin: 30px;
+    text-align: center;
+    background-color: whitesmoke;
+}
+.card-box:hover{
+    border: 5px solid darkcyan;
+}
+.pic-title{
+    font-size: 30px;
+    padding: 10px 0 0 0;
+    
+
+}
+
+a{
+    text-decoration: none;
+}
+
+.pic-username{
+    font-size: 18spx;
+    padding-bottom: 10px;
+}
+.card-image{
+    width: 300px;
+    height: 220px;
+    padding-bottom: 10px;
+}
+.pic-desc{
+    font-size: 18px;
+    padding-bottom: 10px;
+}
