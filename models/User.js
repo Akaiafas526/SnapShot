@@ -1,7 +1,12 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const bcrypt = require('bcrypt');
 
-class User extends Model {}
+class User extends Model {
+  checkPassword(password){
+    return bcrypt.compareSync(password,this.password)
+  }
+}
 
 User.init(
   {
@@ -24,10 +29,12 @@ User.init(
           isEmail:true
       }
     },
-    // Add encryption
     password: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate:{
+        len:[8]
+      }
     }
   },
   {

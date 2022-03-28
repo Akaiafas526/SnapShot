@@ -1,0 +1,1 @@
+// route to '/' and '/api'
