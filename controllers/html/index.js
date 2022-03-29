@@ -4,9 +4,9 @@ const allPostsRoutes = require('./allPosts.js');
 const postTagRoutes = require('./postsByTag.js');
 const postUserRoutes = require('./postsByUser');
 
-router.use('/html', allPostsRoutes);
-// -----------ASK GROUP IN MORNING-----------
-// router.use('/post', postTagRoutes);
-// router.use('/comment', postUserRoutes);
-// ------------------------------------------
+router.use('/', allPostsRoutes);
+
+router.use('/tag', postTagRoutes);
+router.use('/user', postUserRoutes);
+
 module.exports = router;
