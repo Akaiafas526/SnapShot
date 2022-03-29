@@ -1,12 +1,36 @@
 <div>
+    <form class="formPic">
+
+        <div class="text-white post-container flex-column d-flex ">
+            <div class="align-items-center">
+                <div>Create New Post</div>
+                <div>Title:</div>
+                <input class="post-title" type="text" name="title">
+
+             
+                <label class="pictureInput" for="picture">
+                    <input type="file" name="picture" class="upload"/>
+                </label>
+
+                <div>Decription</div>
+
+                <input class="description-box" type="text" name="description">
+                <button class="post-btn" type="submit">+</button>
+            </div>
+        </div>
+    </form>
+  </div>
+
 {{#each post}}
 <div class="card-box">
     
-    <a href="index.html"><div class="pic-title">{{title}}</div></a>
+    <a href="/posts/{{id}}"><div class="pic-title">{{title}}</div>
     <div class="pic-username">{{user.username}}</div>
-    <img class="card-image" src="./images/start-background.jpg" alt="pic">
+    <img class="card-image" src={{picture}} alt="pic">
     <div class="pic-desc">{{description}}</div>
+    </a>
 
   </div>
 {{/each}}
+<script src="js/post.js"></script>
 </div>

@@ -61,4 +61,55 @@ a{
     border-radius: 30px;
     background-color: white;
     color: black;
+    display:block;
+}
+
+.login-container{
+    border: 5px solid black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 26px;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    width: 540px;
+    height: 500px;
+    z-index: 15;
+    top: 30%;
+    left: 44%;
+    margin: -100px 0 0 -150px;
+    background: whitesmoke;
+}
+
+.input{
+    position: relative; 
+    left: 30%;
+    width: 40%;
+    text-align: center;
+    margin: 10px;
+}
+
+.login-btn{
+    width: 20%;
+    position: relative; 
+    left: 39%;
+    margin: 20px 10px 10px 10px;
+    border-radius: 5px;
+}
+/* PICTURE UPLOAD STYLES */
+
+.pictureInput{
+    display:block;
+    width:100px;
+    height:100px;
+    background-image: url(/images/dropzone.png);
+    background-size: cover;
+    background-position: center;
+}
+input[type="file"]{
+    opacity: 0;
+    width:110px;
+    height:110px;
 }
