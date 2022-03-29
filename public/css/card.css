@@ -61,6 +61,7 @@ a{
     border-radius: 30px;
     background-color: white;
     color: black;
+    display:block;
 }
 
 .login-container{
