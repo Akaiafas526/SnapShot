@@ -1,21 +1,16 @@
-    <header>
-        <div class="d-flex bg-dark text-white justify-content-between">
-            <h1 class=" p-3 mb-2 ">Project 2</h1>
-            <nav class="nav d-flex flex-row align-items-center p-4">
-                <a class="px-4 text-decoration-none fs-2 " href="index.html">Logout</a>
-
-            </nav>
-        </div>
-    </header>
-
+    
+    
     <div class="d-flex justify-content-center">
         <div class="text-white d-flex flex-column align-items-center">
-            <h2 class="username-top mt-4">USERNAME</h2>
+            <h2 class="username-top mt-4">{{post.username}}</h2>
          </div>
     </div>
 
+
+{{#each post}}
     <div class="card-box">
-        <a href="index.html"><div class="pic-title">TITLE</div></a>
+        <a href="index.html"><div class="pic-title">{{title}}</div></a>
         <img class="card-image" src="./images/start-background.jpg" alt="pic">
-        <div class="pic-desc">DESCRIPTION</div>
+        <div class="pic-desc">{{description}}</div>
       </div>
+{{/each}}
