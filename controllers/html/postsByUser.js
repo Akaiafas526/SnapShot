@@ -14,8 +14,8 @@ router.get('/user/:id',  async (req, res) => {
         });
         const post = posts.map(post=>post.get({plain:true}));
         console.log(post)
-        // res.render('SOME_VIEW',post)
-        res.status(200).json(post)
+        res.render('userProfile',{post})
+        // res.status(200).json(post)
     } catch (err) {
         res.status(400).json(err);
     }
