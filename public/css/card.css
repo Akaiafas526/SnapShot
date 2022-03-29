@@ -10,6 +10,7 @@ body{
     color: white;
 }
 
+
 .card-box{
     border: 3px solid black;
     border-radius: 30px;
@@ -47,6 +48,7 @@ a{
     font-size: 30px;
 }
 
+/* create new post */
 .post-container{
     border: 3px solid white;
 }
