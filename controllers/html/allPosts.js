@@ -10,8 +10,9 @@ router.get('/',  async (req, res) => {
             include: [{model:Comment},{model:User},{model:Tag}]
         });
         const post = posts.map(post=>post.get({plain:true}));
-        // res.render('SOME_VIEW',post)
-        res.status(200).json(post)
+        console.log(post)
+        res.render('home',{post})
+        // res.status(200).json(post)
     } catch (err) {
         res.status(400).json(err);
     }
@@ -22,11 +23,12 @@ router.get('/',  async (req, res) => {
 router.get('/:id',  async (req, res) => {
     try {
         const posts = await Post.findByPk(req.params.id,{
-            include: [{model:Comment},{model:User},{model:Tag}]
+            include: [{model:Comment,include:[{model:User}]},{model:User},{model:Tag}]
         });
         const post = posts.get({plain:true});
-        // res.render('SOME_VIEW',post)
-        res.status(200).json(post)
+        console.log(post,'HERE')
+        res.render('singlePost',{post})
+        ////res.status(200).json(post)
     } catch (err) {
         res.status(400).json(err);
     }
