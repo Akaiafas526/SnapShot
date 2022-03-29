@@ -4,7 +4,7 @@ const { Post, Comment, User, Tag } = require('../../models');
 
 
 // withAuth
-router.get('/tag/:id',  async (req, res) => {
+router.get('/:id',  async (req, res) => {
     console.log(req.params.id)
     try {
         const posts = await Post.findAll({

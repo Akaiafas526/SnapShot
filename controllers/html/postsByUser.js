@@ -3,7 +3,7 @@ const { Post, Comment, User, Tag } = require('../../models');
 // const withAuth = require('../../utils/auth');
 
 // withAuth
-router.get('/user/:id',  async (req, res) => {
+router.get('/:id',  async (req, res) => {
     try {
         const posts = await Post.findAll({
             include: [{model:Comment,include:[{model:User}]},{model:User},{model:Tag}],
