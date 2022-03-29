@@ -14,7 +14,8 @@
   },
   "scripts": {
     "start": "node server.js",
-    "watch": "nodemon server.js"
+    "watch":"nodemon server.js",
+    "seed":"node ./seeds"
   },
   "name": "project2_pictureapp",
   "description": "",
