@@ -46,3 +46,17 @@ a{
 .username-top{
     font-size: 30px;
 }
+
+.post-container{
+    border: 3px solid white;
+}
+.description-box{
+    width: 200px;
+}
+.post-btn{
+    text-align: center;
+    width: 40px;
+    border-radius: 30px;
+    background-color: white;
+    color: black;
+}
