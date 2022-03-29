@@ -7,11 +7,11 @@
                 <div>Title:</div>
                 <input class="post-title" type="text" name="title">
 
-             <!-- drag and drop pictures -->
+             
                 <label class="pictureInput" for="picture">
                     <input type="file" name="picture" class="upload"/>
-            <!-- <img class="previewImage" src="/images/dropzone.png" > -->
                 </label>
+
                 <div>Decription</div>
 
                 <input class="description-box" type="text" name="description">
@@ -24,10 +24,11 @@
 {{#each post}}
 <div class="card-box">
     
-    <a href="index.html"><div class="pic-title">{{title}}</div></a>
+    <a href="/posts/{{id}}"><div class="pic-title">{{title}}</div>
     <div class="pic-username">{{user.username}}</div>
     <img class="card-image" src={{picture}} alt="pic">
     <div class="pic-desc">{{description}}</div>
+    </a>
 
   </div>
 {{/each}}
