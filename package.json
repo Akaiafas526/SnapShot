@@ -8,5 +8,23 @@
     "express-session": "^1.17.2",
     "mysql2": "^2.3.3",
     "sequelize": "^6.17.0"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "project2_pictureapp",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akaiafas526/project2_pictureapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Akaiafas526/project2_pictureapp/issues"
+  },
+  "homepage": "https://github.com/Akaiafas526/project2_pictureapp#readme"
 }
