@@ -24,8 +24,6 @@ body{
 .pic-title{
     font-size: 30px;
     padding: 10px 0 0 0;
-    
-
 }
 
 a{
@@ -33,7 +31,7 @@ a{
 }
 
 .pic-username{
-    font-size: 18spx;
+    font-size: 18px;
     padding-bottom: 10px;
 }
 .card-image{
@@ -44,4 +42,7 @@ a{
 .pic-desc{
     font-size: 18px;
     padding-bottom: 10px;
+}
+.username-top{
+    font-size: 30px;
 }
