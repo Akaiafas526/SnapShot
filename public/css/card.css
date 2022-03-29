@@ -62,3 +62,38 @@ a{
     background-color: white;
     color: black;
 }
+
+.login-container{
+    border: 5px solid black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 26px;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    width: 540px;
+    height: 500px;
+    z-index: 15;
+    top: 30%;
+    left: 44%;
+    margin: -100px 0 0 -150px;
+    background: whitesmoke;
+}
+
+.input{
+    position: relative; 
+    left: 30%;
+    width: 40%;
+    text-align: center;
+    margin: 10px;
+}
+
+.login-btn{
+    width: 20%;
+    position: relative; 
+    left: 39%;
+    margin: 20px 10px 10px 10px;
+    border-radius: 5px;
+}
