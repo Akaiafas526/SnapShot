@@ -1,83 +1,96 @@
 const { Post } = require('../models');
+const image = require('../')
 
 const postData = [
   {
-    title: 'Blossoming Apricot',
-    artist: 'LedyX',
-    exhibition_date: 'March 30, 2018',
-    gallery_id: 1,
-    filename: '01-blossoming-apricot.jpg',
+    title: 'title1',
     description:
-      'Branches with pink apricot blossoms against a blue background.',
+      '1111Branches with pink apricot blossoms against a blue background.',
+    picture:'../start-background.jpg',
+    userId:6,
+    tagId:4,
   },
   {
-    title: 'Cosmos Flowers',
-    artist: 'WStudio',
-    exhibition_date: 'May 05, 2017',
-    gallery_id: 1,
-    filename: '02-cosmos-flowers.jpg',
-    description: 'Pink cosmos flowers against a blue sky.',
-  },
-  {
-    title: 'Sand + Sea = Summer',
-    artist: 'S_Photo',
-    exhibition_date: 'June 10, 2019',
-    gallery_id: 2,
-    filename: '03-sand-sea-summer.jpg',
-    description: 'Sandy beach with the blue sea and sky in the background.',
-  },
-  {
-    title: 'Beach Chairs',
-    artist: 'icemanphotos',
-    exhibition_date: 'July 4, 2020',
-    gallery_id: 2,
-    filename: '04-beach-chairs.jpg',
-    description: 'Two beach chairs under a beach umbrella on the beach.',
-  },
-  {
-    title: 'Beach Sunrise',
-    artist: 'VRstudio',
-    exhibition_date: 'August 14, 2016',
-    gallery_id: 2,
-    filename: '05-beach-sunrise.jpg',
-    description: 'Sun setting in the horizon with waves lapping the shore.',
-  },
-  {
-    title: 'Fall Colors',
-    artist: 'DrivingJack',
-    exhibition_date: 'October 15, 2018',
-    gallery_id: 3,
-    filename: '06-fall-colors.jpg',
+    title: 'title2',
     description:
-      'Trees with red, orange, yellow leaves reflected on a still lake.',
+      '2222Branches with pink apricot blossoms against a blue background.',
+    picture:'../start-background.jpg',
+    userId:6,
+    tagId:2,
   },
   {
-    title: 'Autumn Mountains',
-    artist: 'Vitalii_Mamchuk',
-    exhibition_date: 'November 3, 2016',
-    gallery_id: 3,
-    filename: '07-autumn-mountains.jpg',
+    title: 'title3',
     description:
-      'Mountains with red and yellow leaves against a background of hazy rolling hills.',
+      '333Branches with pink apricot blossoms against a blue background.',
+    picture:'../start-background.jpg',
+    userId:4,
+    tagId:8,
   },
   {
-    title: 'Frozen River',
-    artist: 'Vlad Sokolovsky',
-    exhibition_date: 'December 24, 2020',
-    gallery_id: 4,
-    filename: '08-frozen-river.jpg',
+    title: 'title4',
     description:
-      'Trees with white frozen branches reflected on a frozen river against a light pink sky.',
+      '444Branches with pink apricot blossoms against a blue background.',
+    picture:'../start-background.jpg',
+    userId:8,
+    tagId:2,
   },
   {
-    title: 'Winter Home',
-    artist: 'Smit',
-    exhibition_date: 'January 20, 2018',
-    gallery_id: 4,
-    filename: '09-winter-home.jpg',
+    title: 'title5',
     description:
-      'Log cabin blanketed in heavy white snow with tall snow covered pine trees in the background.',
+      '555Branches with pink apricot blossoms against a blue background.',
+    picture:'../start-background.jpg',
+    userId:1,
+    tagId:3,
   },
+  {
+    title: 'title6',
+    description:
+      '666Branches with pink apricot blossoms against a blue background.',
+    picture:'../start-background.jpg',
+    userId:11,
+    tagId:5,
+  },
+  {
+    title: 'title7',
+    description:
+      '777Branches with pink apricot blossoms against a blue background.',
+    picture:'../start-background.jpg',
+    userId:5,
+    tagId:5,
+  },
+  {
+    title: 'title8',
+    description:
+      '888Branches with pink apricot blossoms against a blue background.',
+    picture:'../start-background.jpg',
+    userId:1,
+    tagId:8,
+  },
+  {
+    title: 'title9',
+    description:
+      '999Branches with pink apricot blossoms against a blue background.',
+    picture:'../start-background.jpg',
+    userId:8,
+    tagId:1,
+  },
+  {
+    title: 'title10',
+    description:
+      '101010Branches with pink apricot blossoms against a blue background.',
+    picture:'../start-background.jpg',
+    userId:2,
+    tagId:2,
+  },
+  {
+    title: 'title11',
+    description:
+      '11 11 11Branches with pink apricot blossoms against a blue background.',
+    picture:'../start-background.jpg',
+    userId:8,
+    tagId:6,
+  },
+  
 ];
 
 const seedPosts = () => Post.bulkCreate(postData);
