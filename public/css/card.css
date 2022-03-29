@@ -2,7 +2,7 @@ body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-image: url('../../images/darkgb.jpeg');
+    background-image: url('../images/darkgb.jpeg');
     background-size: 2050px 1100px;
     background-repeat: no-repeat;
 }
