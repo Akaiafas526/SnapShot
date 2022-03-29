@@ -13,7 +13,7 @@ const storage = multer.diskStorage({
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
     
-    cb(null, file.originalname + '-' + uniqueSuffix+path.extname(file.originalname))
+    cb(null, path.parse(file.originalname).name + '-' + uniqueSuffix+path.extname(file.originalname))
   }
 })
 
@@ -26,22 +26,6 @@ const upload = multer({ storage: storage,  fileFilter: function (req, file, call
 }
 
 })
-
-// app.post('/photo', upload.single('picture'), function (req, res, next) {
-//   console.log(req.body,req.body.id,req.body.title,req.body.description)
-  
-//   res.json({
-//       msg:"uploaded"
-//     })
-//   // res.send(`<img src="./uploads/${req.file.filename}" width="200px">`)
-// })
-
-
-
-
-
-
-
 
 
 // withAuth
