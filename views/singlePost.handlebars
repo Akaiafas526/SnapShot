@@ -1,7 +1,7 @@
   <div class="d-flex justify-content-center">
         <div class="text-white d-flex flex-column align-items-center">
-            <h2 class="pic-title">TITLE</h2>
-            <div class="pic-username">USERNAME</div>
+            <h2 class="pic-title">{{post.title}}</h2>
+            <div class="pic-username">{{post.user.username}}</div>
          </div>
     </div>
 
@@ -21,16 +21,18 @@
                     <button class="post-comment btn-primary">Post Comment</button>
                     <hr>
                     <div class="comment-box">
-                        <h4 class="text-white">USERNAME</h4>
+                        
+{{#each posts.comments as |comment|}}
+                        {{>comments}}
+                        {{/each}}
+                        {{!-- <h4 class="text-white">USERNAME</h4>
                         <p class="text-white">Comment</p>
                         <h4 class="text-white">USERNAME</h4>
                         <p class="text-white">Comment</p>
                         <h4 class="text-white">USERNAME</h4>
                         <p class="text-white">Comment</p>
                         <h4 class="text-white">USERNAME</h4>
-                        <p class="text-white">Comment</p>
-                        <h4 class="text-white">USERNAME</h4>
-                        <p class="text-white">Comment</p>
+                        <p class="text-white">Comment</p> --}}
                     </div>
                 </div>
             </div>
