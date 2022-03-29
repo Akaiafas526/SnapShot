@@ -10,22 +10,41 @@ body{
     color: white;
 }
 
+.comment-box{
+    overflow-y: auto;
+    height: 380px;
+}
+
+.peepee{
+    border: 3px solid white;
+}
+
+.card-container{
+    border: 3px solid white;
+    flex: 1;
+}
+
+hr{
+    color: white;
+}
+
 .card-box{
     border: 3px solid black;
     border-radius: 30px;
-    width: 370px;
+    width: 550px;
+    height: 500px;
     margin: 30px;
     text-align: center;
     background-color: whitesmoke;
+    margin-right: 200px;
 }
+
 .card-box:hover{
     border: 5px solid darkcyan;
 }
 .pic-title{
-    font-size: 30px;
+    font-size: 55px;
     padding: 10px 0 0 0;
-    
-
 }
 
 a{
@@ -33,15 +52,12 @@ a{
 }
 
 .pic-username{
-    font-size: 18spx;
+    font-size: 18px;
     padding-bottom: 10px;
 }
 .card-image{
-    width: 300px;
-    height: 220px;
+    width: 400px;
+    height: 400px;
     padding-bottom: 10px;
-}
-.pic-desc{
-    font-size: 18px;
-    padding-bottom: 10px;
+    margin: 20px;
 }

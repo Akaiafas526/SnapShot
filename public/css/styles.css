@@ -1,11 +1,15 @@
+
 body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-image: url('../images/darkgb.jpeg');
+    background-image: url('../../images/darkgb.jpeg');
     background-repeat: no-repeat;
     background-size: 2050px 1100px;
+    height: 100vh;
 }
+
+
 
 .login-container{
     border: 5px solid black;
@@ -42,3 +46,9 @@ body{
     border-radius: 5px;
 }
 
+/* @media screen and (min-width: 375px) {
+    .login-container{
+        width: 300px;
+        height: 500px;
+    }
+} */
