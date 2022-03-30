@@ -2,47 +2,43 @@ const { Tag } = require('../models');
 
 const tagData = [
   {
-    name: 'tag1',
+    name: 'Australia',
    
   },
   {
-    name: 'tag2',
+    name: 'foodlover',
    
   },
   {
-    name: 'tag3',
+    name: 'art',
    
   },
   {
-    name: 'tag4',
+    name: 'nature',
    
   },
   {
-    name: 'tag5',
+    name: 'travel',
    
   },
   {
-    name: 'tag6',
+    name: 'adventure',
    
   },
   {
-    name: 'tag7',
+    name: 'motivation',
    
   },
   {
-    name: 'tag8',
+    name: 'repost',
    
   },
   {
-    name: 'tag9',
+    name: 'picoftheday',
    
   },
   {
-    name: 'tag10',
-   
-  },
-  {
-    name: 'tag11',
+    name: 'family',
    
   },
   
