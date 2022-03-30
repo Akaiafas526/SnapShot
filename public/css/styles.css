@@ -1,4 +1,4 @@
-/* 
+
 body{
     padding: 0;
     margin: 0;
@@ -8,8 +8,6 @@ body{
     background-size: 2050px 1100px;
     height: 100vh;
 }
-
-
 
 .login-container{
     border: 5px solid black;
@@ -44,15 +42,24 @@ body{
     left: 39%;
     margin: 20px 10px 10px 10px;
     border-radius: 5px;
-} */
+} 
 
-
-
-
-
-/* @media screen and (min-width: 375px) {
+@media screen and (max-width: 700px) {
     .login-container{
         width: 300px;
         height: 500px;
+        display: flex;
+        justify-content: center;
+        margin-left: -128px;
     }
-} */
+    .login-btn{
+        left: 34%;
+        width: 30%;
+        display: flex;
+        align-items: center;
+    }
+    .input{
+        left: 20%;
+        width: 60%;
+    }
+}
