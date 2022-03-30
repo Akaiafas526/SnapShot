@@ -17,9 +17,7 @@ const registerFormHandler = async function(event){
     
     if(response.ok){
         document.location.replace('/');
-    } else {
-        alert('Failed to sign up');
-    }
+    } 
 };
 
 document
