@@ -3,10 +3,22 @@ const inputEl = document.querySelector('.pictureInput');
 const imageEl = document.querySelector('.previewImage');
 const upload = document.querySelector('.upload');
 const validFileTypes = ['png','jpg','gif','jpeg']
-
 const data = new FormData();
+const tagEl = document.querySelectorAll('.tags');
 
+console.log(tagEl,tagEl[0])
 
+async function getTags () {
+    const tags = await fetch('/api/tag')
+    const tagData = await tags.json()
+    tagData.forEach(tag=>{
+        const option = document.createElement('option')
+        option.text=tag.name
+        option.value= tag.id
+        tagEl[0].appendChild(option)
+        tagEl[1].appendChild(option)
+    })
+}
 // Checks for picture extension
 function checkExtension (file) {
     const fileExt = file.name.split('.')
@@ -44,6 +56,7 @@ formEl.addEventListener('submit',async (e)=>{
             data.append('picture',upload.files[0])
             data.append('title',e.target[0].value)
             data.append('description',e.target[2].value)
+            data.append('tagId',e.target[3].value)
             console.log(data)
             const response = await fetch('/api/post',{
                 method:'POST',
@@ -59,3 +72,5 @@ formEl.addEventListener('submit',async (e)=>{
         }
     }
 })
+
+getTags();

@@ -39,7 +39,7 @@ router.post('/', authorize,upload.single('picture'), async (req, res) => {
             title:req.body.title,
             description:req.body.description,
             // userId:1,
-            tagId:1,
+            tagId:req.body.tagId,
             userId: req.session.userId,
             picture:`./uploads/${req.file.filename}`
         });
