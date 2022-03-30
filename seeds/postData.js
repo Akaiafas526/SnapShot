@@ -3,12 +3,12 @@ const image = require('../')
 
 const postData = [
   {
-    title: 'title1',
+    title: 'Australia Trip',
     description:
-      '1111Branches with pink apricot blossoms against a blue background.',
-    picture:'./uploads/istockphoto-1093110112-612x612-1648582125823-288301692.jpg',
-    userId:6,
-    tagId:4,
+      'Kangaroo Jack came to play!',
+    picture:'./uploads/kangaroo_pic.jpg',
+    userId:1,
+    tagId:1,
   },
   {
     title: 'title2',
