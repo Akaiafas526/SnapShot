@@ -14,7 +14,7 @@ const registerFormHandler = async function(event){
         }),
         headers: { 'Content-Type': 'application/json'},
     });
-    console.log('something')
+    
     if(response.ok){
         document.location.replace('/');
     } else {

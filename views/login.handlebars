@@ -1,12 +1,12 @@
- <form>
+ <form id="login-form">
         <div class="container">
             <div class="row">
                 <div class="login-container col-sm-3">
                     <h2 class="sign-in text-center">Sign In</h2>
                     <label for="username">Username</label>
-                    <input class="input" type="text" placeholder="Enter Username" id="username" required>
+                    <input id="username-input-email" class="input" type="text" placeholder="Enter Username"  required>
                     <label for="password">Password</label>
-                    <input class="input" type="text" placeholder="Enter Password" id="password" required>
+                    <input id="password-input-password" class="input" type="text" placeholder="Enter Password"  required>
                     <button class="login-btn">Login</button>
                     <hr>
                     <p>Don't have an account? Register <a href="/register">Here</a></p>
@@ -14,3 +14,5 @@
             </div>
         </div>
     </form>
+
+    <script src="/js/login.js"></script>
