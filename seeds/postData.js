@@ -1,96 +1,84 @@
-const { Post } = require('../models');
-const image = require('../')
+const { Post } = require("../models");
+const image = require("../");
 
 const postData = [
   {
-    title: 'Australia Trip',
-    description:
-      'Kangaroo Jack came to play!',
-    picture:'./uploads/kangaroo_pic.jpg',
-    userId:1,
-    tagId:1,
+    title: "Australia Trip",
+    description: "Kangaroo Jack came to play!",
+    picture: "./uploads/kangaroo_pic.jpg",
+    userId: 1,
+    tagId: 1,
   },
   {
-    title: 'title2',
-    description:
-      '2222Branches with pink apricot blossoms against a blue background.',
-    picture:'./uploads/istockphoto-1093110112-612x612-1648582125823-288301692.jpg',
-    userId:6,
-    tagId:2,
+    title: "Bon Appetit",
+    description: "Look at that croissant!",
+    picture: "./uploads/croissant_pic.jpg",
+    userId: 2,
+    tagId: 2,
   },
   {
-    title: 'title3',
-    description:
-      '333Branches with pink apricot blossoms against a blue background.',
-    picture:'./uploads/istockphoto-1093110112-612x612-1648582125823-288301692.jpg',
-    userId:4,
-    tagId:8,
+    title: "Psychodelic",
+    description: "Absolutely mind boggling!",
+    picture: "./uploads/art_pic.jpg",
+    userId: 3,
+    tagId: 3,
   },
   {
-    title: 'title4',
+    title: "Love for Cyprus",
     description:
-      '444Branches with pink apricot blossoms against a blue background.',
-    picture:'./uploads/istockphoto-1093110112-612x612-1648582125823-288301692.jpg',
-    userId:8,
-    tagId:2,
+      "Cyprus is a stunning island with crystal clear water and wonderful people.",
+    picture: "./uploads/cyprus2_pic.jpg",
+    userId: 11,
+    tagId: 4,
   },
   {
-    title: 'title5',
-    description:
-      '555Branches with pink apricot blossoms against a blue background.',
-    picture:'./uploads/istockphoto-1093110112-612x612-1648582125823-288301692.jpg',
-    userId:1,
-    tagId:3,
+    title: "Skiing in the Swiss Alpes",
+    description: "Breathtaking experience skiing on these beautiful mountain!",
+    picture: "./uploads/alpes_pic.jpg",
+    userId: 4,
+    tagId: 5,
   },
   {
-    title: 'title6',
-    description:
-      '666Branches with pink apricot blossoms against a blue background.',
-    picture:'./uploads/istockphoto-1093110112-612x612-1648582125823-288301692.jpg',
-    userId:11,
-    tagId:5,
+    title: "Leap of Faith",
+    description: "Never be afraid to take the leap to success!",
+    picture: "./uploads/leap_pic.jpg",
+    userId: 5,
+    tagId: 6,
   },
   {
-    title: 'title7',
-    description:
-      '777Branches with pink apricot blossoms against a blue background.',
-    picture:'./uploads/istockphoto-1093110112-612x612-1648582125823-288301692.jpg',
-    userId:5,
-    tagId:5,
+    title: "Family is Forever",
+    description: "Grateful for the family I have everyday!",
+    picture: "./uploads/family_pic.jpg",
+    userId: 6,
+    tagId: 10,
   },
   {
-    title: 'title8',
+    title: "DOGGO",
     description:
-      '888Branches with pink apricot blossoms against a blue background.',
-    picture:'./uploads/istockphoto-1093110112-612x612-1648582125823-288301692.jpg',
-    userId:1,
-    tagId:8,
+      "Handsome man with his shades on.",
+    picture:
+      "./uploads/dog_pic.jpg",
+    userId: 7,
+    tagId: 9,
   },
   {
-    title: 'title9',
+    title: "YUM",
     description:
-      '999Branches with pink apricot blossoms against a blue background.',
-    picture:'./uploads/istockphoto-1093110112-612x612-1648582125823-288301692.jpg',
-    userId:8,
-    tagId:1,
+      "Grilled on the charcoal to perfection..",
+    picture:
+      "./uploads/kebab_pic.jpg",
+    userId: 8,
+    tagId: 2,
   },
   {
-    title: 'title10',
+    title: "World Trade Center",
     description:
-      '101010Branches with pink apricot blossoms against a blue background.',
-    picture:'./uploads/istockphoto-1093110112-612x612-1648582125823-288301692.jpg',
-    userId:2,
-    tagId:2,
+      "Favorite NYC architecture",
+    picture:
+      "./uploads/architecture_pic.jpg",
+    userId: 9,
+    tagId: 3,
   },
-  {
-    title: 'title11',
-    description:
-      '11 11 11Branches with pink apricot blossoms against a blue background.',
-    picture:'./uploads/istockphoto-1093110112-612x612-1648582125823-288301692.jpg',
-    userId:8,
-    tagId:6,
-  },
-  
 ];
 
 const seedPosts = () => Post.bulkCreate(postData);
