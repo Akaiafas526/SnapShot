@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const { Post, Comment, User, Tag } = require('../models');
-// const withAuth = require('../../utils/auth');
+const authorize = require('../utils/auth');
 
 
 // withAuth
-router.get('/',  async (req, res) => {
+router.get('/',authorize,  async (req, res) => {
     try {
         const posts = await Post.findAll({
             include: [{model:Comment},{model:User},{model:Tag}]
@@ -20,7 +20,7 @@ router.get('/',  async (req, res) => {
 
 
 // withAuth
-router.get('/posts/:id',  async (req, res) => {
+router.get('/posts/:id', authorize, async (req, res) => {
     try {
         const posts = await Post.findByPk(req.params.id,{
             include: [{model:Comment,include:[{model:User}]},{model:User},{model:Tag}]
@@ -36,7 +36,7 @@ router.get('/posts/:id',  async (req, res) => {
 
 
 
-router.get('/tag/:id',  async (req, res) => {
+router.get('/tag/:id',authorize,  async (req, res) => {
     console.log(req.params.id)
     try {
         const posts = await Post.findAll({
@@ -56,13 +56,14 @@ router.get('/tag/:id',  async (req, res) => {
 });
 
 // withAuth
-router.get('/user/:id',  async (req, res) => {
+router.get('/user/:id',authorize,  async (req, res) => {
     try {
+        const user = req.params.id || req.session.userId
         const posts = await Post.findAll({
             include: [{model:Comment,include:[{model:User}]},{model:User},{model:Tag}],
         
             where:{
-                userId:req.params.id
+                userId:user
             }
         });
         const post = posts.map(post=>post.get({plain:true}));

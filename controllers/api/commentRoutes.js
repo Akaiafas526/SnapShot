@@ -1,14 +1,14 @@
 const router = require('express').Router();
 const { Comment } = require('../../models');
-// const withAuth = require('../../utils/auth');
+const authorize = require('../../utils/auth');
 
 
 // withAuth
-router.post('/',  async (req, res) => {
+router.post('/', authorize,  async (req, res) => {
     try {
         const newComment = await Comment.create({
             ...req.body,
-            // userId: req.session.userId,
+            userId: req.session.userId,
         });
         
         res.status(200).json(newComment)
@@ -17,15 +17,15 @@ router.post('/',  async (req, res) => {
     }
 });
 
-
+// Edit comment
 // withAuth
-router.put('/:id',  async (req, res) => {
+router.put('/:id',authorize,  async (req, res) => {
   try {
     const [ affectedRows ] = await Comment.update(req.body, {
       where:{
         id:req.params.id,
-        userId:1
-        // userId:req.session.userId
+        // userId:1
+        userId:req.session.userId
       }
 
     });
@@ -41,13 +41,13 @@ router.put('/:id',  async (req, res) => {
 });
 
 // withAuth
-router.delete('/:id',  async (req, res) => {
+router.delete('/:id',authorize,  async (req, res) => {
   try {
     const deletedComment = await Comment.destroy({
       where: {
         id: req.params.id,
-        user_id:1
-        // user_id: req.session.user_id,
+        // user_id:1
+        user_id: req.session.user_id,
       },
     });
 
