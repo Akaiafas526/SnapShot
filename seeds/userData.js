@@ -3,67 +3,67 @@ const { User } = require('../models');
 const userData = [
   {
     username: 'starwarspotato',
-    email: 'star@gmail.com',
+    email: 'star22@gmail.com',
     password: '12345678',
     
   },
   {
     username: 'casanova',
-    email: 'casanova@gmail.com',
+    email: 'casanova34@gmail.com',
     password: '12345678',
     
   },
   {
     username: 'jerry_mouse',
-    email: 'mouse@gmail.com',
+    email: 'mouse11@gmail.com',
     password: '12345678',
     
   },
   {
     username: 'tom_cat',
-    email: 'cat@gmail.com',
+    email: 'cat67@gmail.com',
     password: '12345678',
     
   },
   {
     username: 'averagestudent',
-    email: 'average@gmail.com',
+    email: 'average89@gmail.com',
     password: '12345678',
     
   },
   {
     username: 'yellowsnowman',
-    email: 'snowman@gmail.com',
+    email: 'snowman2@gmail.com',
     password: '12345678',
     
   },
   {
     username: 'crazy_cat_lady',
-    email: 'crazylady@gmail.com',
+    email: 'crazylady90@gmail.com',
     password: '12345678',
     
   },
   {
     username: 'avocadorable',
-    email: 'avocadorable@gmail.com',
+    email: 'avocadorable88@gmail.com',
     password: '12345678',
     
   },
   {
     username: 'kim_chi',
-    email: 'kimchi@gmail.com',
+    email: 'kimchi09@gmail.com',
     password: '12345678',
     
   },
   {
     username: 'man_eats_pants',
-    email: 'pantseater@gmail.com',
+    email: 'pantseater45@gmail.com',
     password: '12345678',
     
   },
   {
     username: 'john_stamos',
-    email: 'stamos@gmail.com',
+    email: 'stamos1@gmail.com',
     password: '12345678',
     
   },
