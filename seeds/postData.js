@@ -27,7 +27,7 @@ const postData = [
     title: "Love for Cyprus",
     description:
       "Cyprus is a stunning island with crystal clear water and wonderful people.",
-    picture: "./uploads/cyprus2_pic.jpg",
+    picture: "./uploads/cyprus_pic.jpg",
     userId: 11,
     tagId: 4,
   },
