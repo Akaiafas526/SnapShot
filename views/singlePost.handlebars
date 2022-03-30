@@ -1,40 +1,139 @@
-  <div class="d-flex justify-content-center">
-        <div class="text-white d-flex flex-column align-items-center">
-            <h2 class="pic-title">{{post.title}}</h2>
-            <div class="pic-username">{{post.user.username}}</div>
-         </div>
+<input type="button" onclick="location.href='/';" value="Go to Homepage" />
+
+
+<div class="d-flex justify-content-center">
+    <div class="text-white d-flex flex-column align-items-center">
+        <h2 class="pic-title">{{post.title}}</h2>
+        <div class="pic-username">{{post.user.username}}</div>
     </div>
+</div>
 
+<div>
+    <div class="card-container d-flex justify-content-center">
+        <div class="card-box">
+            <img class="card-image" src="./images/start-background.jpg" alt="pic">
+            <div class="pic-desc">DESCRIPTION</div>
+        </div>
 
+        <!-- COMMENT Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Add New Comment
+        </button>
 
-    <div>
-        <div class="card-container d-flex justify-content-center">
-            <div class="card-box">
-                <img class="card-image" src="./images/start-background.jpg" alt="pic">
-                <div class="pic-desc">DESCRIPTION</div>
-            </div>
+        <!-- COMMENT Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">New Comment</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" name="username" id="comment">
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
 
-            <div class="post-comment-box d-flex">
-                <div class="align-items-center">
-                    <h2 class="text-white mt-4">USERNAME</h2>
-                    <input type="text" name="username" id="comment">
-                    <button class="post-comment btn-primary">Post Comment</button>
-                    <hr>
-                    <div class="comment-box">
-                        
-                        {{#each post.comments as |comment|}}
-                            {{>comments}}
-                        {{/each}}
-                        {{!-- <h4 class="text-white">USERNAME</h4>
-                        <p class="text-white">Comment</p>
-                        <h4 class="text-white">USERNAME</h4>
-                        <p class="text-white">Comment</p>
-                        <h4 class="text-white">USERNAME</h4>
-                        <p class="text-white">Comment</p>
-                        <h4 class="text-white">USERNAME</h4>
-                        <p class="text-white">Comment</p> --}}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+        <!-- EDIT Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
+            Edit Post
+        </button>
+
+        <!-- EDIT Modal -->
+        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Post</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="text-black post-container flex-column d-flex ">
+                            <div class="align-items-center">
+                                <div>Edit Post</div>
+                                <div>Title:</div>
+                                <input class="post-title" type="text" name="title">
+                                <div>Decription</div>
+                                <input class="description-box" type="text" name="description">
+                                <button class="post-btn" type="submit">+</button>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- DELETE Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal">
+            Delete Post
+        </button>
+
+        <!-- DELETE Modal -->
+        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Delete Post</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="text-black post-container flex-column d-flex ">
+                            <div class="align-items-center">
+                                <div>Are you sure you want to delete this post?</div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Don't Delete</button>
+                                    <button type="submit" class="btn btn-primary">Delete</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="d-flex flex-column">
+            {{#each post.comments as |comment|}}
+            {{>comments}}
+            {{/each}}
+            {{!-- <h4 class="text-white">USERNAME</h4>
+            <p class="text-white">Comment</p>
+            <h4 class="text-white">USERNAME</h4>
+            <p class="text-white">Comment</p>
+            <h4 class="text-white">USERNAME</h4>
+            <p class="text-white">Comment</p>
+            <h4 class="text-white">USERNAME</h4>
+            <p class="text-white">Comment</p> --}}
+        </div>
+
+
+
     </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+                                
+                            
