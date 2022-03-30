@@ -1,15 +1,17 @@
 const router = require('express').Router();
 const { Post } = require('../../models');
-// const withAuth = require('../../utils/auth');
+const authorize = require('../../utils/auth');
 const path = require('path');
 const multer = require('multer');
 
 
-
+// Sets storage folder
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, './public/uploads')
   },
+
+  // Creates random file name using the original name with a random string of numbers based on the current time to prevent duplicate names
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
     
@@ -17,6 +19,8 @@ const storage = multer.diskStorage({
   }
 })
 
+
+// Sets the storage and using a filter function to ensure the file is of the few allowed file types
 const upload = multer({ storage: storage,  fileFilter: function (req, file, callback) {
   var ext = path.extname(file.originalname);
   if(ext !== '.png' && ext !== '.jpg' && ext !== '.gif' && ext !== '.jpeg') {
@@ -29,14 +33,14 @@ const upload = multer({ storage: storage,  fileFilter: function (req, file, call
 
 
 // withAuth
-router.post('/', upload.single('picture'), async (req, res) => {
+router.post('/', authorize,upload.single('picture'), async (req, res) => {
     try {
         const newPost = await Post.create({
             title:req.body.title,
             description:req.body.description,
             // userId:1,
             tagId:1,
-            userId: req.session.user_id,
+            userId: req.session.userId,
             picture:`./uploads/${req.file.filename}`
         });
         
@@ -48,14 +52,14 @@ router.post('/', upload.single('picture'), async (req, res) => {
 
 
 // withAuth
-router.put('/:id',  async (req, res) => {
+router.put('/:id',authorize,  async (req, res) => {
   try {
     const [ affectedRows ] = await Post.update(req.body, {
-      // ODO: SET ID TO ID PARAMETER INSIDE WHERE CLAUSE CONDITION FIELD
+      
       where:{
         id:req.params.id,
-        userId:1
-        // userId:req.session.userId
+        // userId:1
+        userId:req.session.userId
       }
 
     });
@@ -71,13 +75,13 @@ router.put('/:id',  async (req, res) => {
 });
 
 // withAuth
-router.delete('/:id',  async (req, res) => {
+router.delete('/:id', authorize, async (req, res) => {
   try {
     const deletedPost = await Post.destroy({
       where: {
         id: req.params.id,
-        user_id:1
-        // user_id: req.session.user_id,
+        // user_id:1
+        user_id: req.session.user_id,
       },
     });
 
