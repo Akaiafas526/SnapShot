@@ -1,3 +1,7 @@
+// const loginModal = document.querySelector('#loginModal');
+let myModal = new bootstrap.Modal(document.getElementById('loginModal'), {});
+
+
 const loginFormHandler = async function (event) {
     event.preventDefault();
 
@@ -15,7 +19,14 @@ const loginFormHandler = async function (event) {
 
     if (response.ok) {
         document.location.replace('/')
-    } 
+    } else {
+        myModal.show();
+        // loginModal.setAttribute('class','show')
+        // loginModal.classList.add('modal')
+        // loginModal.classList.add('fade')
+        // loginModal.removeAttribute('aria-hidden')
+        // loginModal.setAttribute('aria-modal',true)
+    }
 };
 
 document
