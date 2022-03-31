@@ -7,7 +7,7 @@
 
 {{#if isOwner.valid}}
     <!-- Edit Comment Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editCommentModal">
+    <button type="button" class="btn btn-primary" id="editComment" data-bs-toggle="modal" data-bs-target="#editCommentModal" data-id={{id}}>
         Edit Comment
     </button>
 {{/if}}
