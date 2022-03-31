@@ -5,6 +5,7 @@ const eFormEl = document.querySelector(".edit-post-form")
 const post = document.querySelector('.post');
 const comments = document.querySelector('.comments');
 const deleteCommentBtn =document.querySelectorAll('.deleteCommentBtn');
+
 deleteCommentBtn.forEach(( btn) => {
   btn.addEventListener('click', deleteComment)
 })
