@@ -5,6 +5,10 @@ const eFormEl = document.querySelector(".edit-post-form")
 const post = document.querySelector('.post');
 const comments = document.querySelector('.comments');
 const deleteCommentBtn =document.querySelectorAll('.deleteCommentBtn');
+
+let myModal = new bootstrap.Modal(document.getElementById('deleteModal'), {});
+
+
 deleteCommentBtn.forEach(( btn) => {
   btn.addEventListener('click', deleteComment)
 })
@@ -33,15 +37,15 @@ async function deleteComment(e){
   e.preventDefault()
   e.stopPropagation()
   const commentid = e.currentTarget.getAttribute('data-id')
-  console.log(commentid, e.target, e.currentTarget)
-    
+  console.log(commentid, e.target, e.currentTarget,this)
+    myModal.show()
     const data = await fetch(`/api/comment/${commentid}`, {
         method: 'DELETE',
         headers: { 'Content-type': 'application/json' },
     })
     if (data.ok){
    
-      document.location.assign(`/posts/${postId}`);
+      // document.location.assign(`/posts/${postId}`);
     } 
     else{
       console.log('ERROR')
