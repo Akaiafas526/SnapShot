@@ -23,6 +23,7 @@
         </button>
 
         <!-- COMMENT Modal -->
+        <form class="comment-form">
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -30,6 +31,7 @@
                         <h5 class="modal-title" id="exampleModalLabel">New Comment</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
+                    <input type="hidden" name="postId" value="{{post.id}}">
                     <div class="modal-body">
                         <input type="text" name="username" id="comment">
                         <div class="modal-footer">
@@ -41,6 +43,7 @@
                 </div>
             </div>
         </div>
+        </form>
 
 
         <!-- EDIT Button trigger modal -->
@@ -115,7 +118,7 @@
 
 
 
-        <div class="d-flex flex-column">
+        <div class="d-flex flex-column>
             {{#each post.comments as |comment|}}
             {{>comments}}
             {{/each}}
