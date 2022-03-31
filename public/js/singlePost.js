@@ -4,17 +4,25 @@ const cFormEl = document.querySelector(".comment-form");
 const eFormEl = document.querySelector(".edit-post-form")
 const post = document.querySelector('.post');
 const comments = document.querySelector('.comments');
-const deleteCommentBtn =document.querySelectorAll('.deleteCommentBtn');
-
-let myModal = new bootstrap.Modal(document.getElementById('deleteModal'), {});
+const deleteCommentBtn =document.querySelectorAll('#deleteComment');
+const editCommentBtn =document.querySelectorAll('#editComment');
+const deleteCommentModalBtn =document.querySelector('.deleteCommentBtn');
+const editCommentModalBtn =document.querySelector('.editComment');
+console.log(deleteCommentModalBtn)
+let deleteModal = new bootstrap.Modal(document.getElementById('deleteCommentModal'), {});
+let editModal = new bootstrap.Modal(document.getElementById('editCommentModal'), {});
 
 
 deleteCommentBtn.forEach(( btn) => {
   btn.addEventListener('click', deleteComment)
 })
-
+editCommentBtn.forEach(( btn) => {
+  btn.addEventListener('click', editComment)
+})
+deleteCommentModalBtn.addEventListener('click',deleteConfirmed)
+editCommentModalBtn.addEventListener('click',editConfirmed)
 const postId = post.getAttribute('data-postId')
-
+let commentid;
 
 async function deletePost()  {
     const data = await fetch(`/api/post/${postId}`, {
@@ -31,30 +39,77 @@ async function deletePost()  {
 deleteBtn.addEventListener('click', deletePost)
 
 
-console.log('heloo_______')
+async function deleteConfirmed(){
+  const data = await fetch(`/api/comment/${commentid}`, {
+    method: 'DELETE',
+    headers: { 'Content-type': 'application/json' },
+})
+if (data.ok){
 
-async function deleteComment(e){
+  document.location.assign(`/posts/${postId}`);
+} 
+else{
+  console.log('ERROR')
+}
+}
+async function editConfirmed(e){
+  e.preventDefault()
+  const newText =  e.target.parentElement.parentElement.firstChild.nextElementSibling.value
+  const data = await fetch(`/api/comment/${commentid}`, {
+    method: 'PUT',
+    headers: { 'Content-type': 'application/json' },
+    body:JSON.stringify({text:newText})
+})
+if (data.ok){
+
+  document.location.assign(`/posts/${postId}`);
+} 
+else{
+  console.log('ERROR')
+}
+}
+
+
+function deleteComment(e){
   e.preventDefault()
   e.stopPropagation()
-  const commentid = e.currentTarget.getAttribute('data-id')
-  console.log(commentid, e.target, e.currentTarget,this)
-    myModal.show()
-    const data = await fetch(`/api/comment/${commentid}`, {
-        method: 'DELETE',
-        headers: { 'Content-type': 'application/json' },
-    })
-    if (data.ok){
-   
-      // document.location.assign(`/posts/${postId}`);
-    } 
-    else{
-      console.log('ERROR')
-    }
+  console.log(e,e.target.dataset.id)
+  commentid = e.target.dataset.id
+  // console.log(commentid, e.target, e.currentTarget,this)
+    deleteModal.show()
+    // deleteConfirmed(commentid)
+    
+}
+function editComment(e){
+  e.preventDefault()
+  e.stopPropagation()
+  console.log(e,e.target.dataset.id)
+  commentid = e.target.dataset.id
+  // console.log(commentid, e.target, e.currentTarget,this)
+    editModal.show()
+    // deleteConfirmed(commentid)
+    
 }
 
 
 
+// editCommentBtn.addEventListener('click',(e)=>{
+//   e.preventDefault()
+//   const newText =  e.target.parentElement.parentElement.firstChild.nextElementSibling.value
+//   console.log(e.target,newText)
+//   //   const data = await fetch(`/api/comment/${commentid}`, {
+// //     method: 'PUT',
+// //     headers: { 'Content-type': 'application/json' },
+// //     body:JSON.stringify({text:newText})
+// // })
+// // if (data.ok){
 
+// //   document.location.assign(`/posts/${postId}`);
+// // } 
+// // else{
+// //   console.log('ERROR')
+// // }
+// })
 
 
 // ask at start of class
@@ -74,6 +129,7 @@ async function deleteComment(e){
 
 eFormEl.addEventListener("submit", async (e) => {
   e.preventDefault();
+  // console.log(e.target)
   const title = document.querySelector('.post-title').value
   const description = document.querySelector('.description-box').value
 
