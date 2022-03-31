@@ -8,14 +8,14 @@
         <div class="pic-username"><a href="/user/{{post.user.id}}">{{post.user.username}}</a></div>
 
         <div class="card-container d-flex justify-content-center">
-            <div class="card-box">
-                <img class="card-image" src=".{{post.picture}}" alt="pic">
-                <div class="pic-desc">{{post.description}}</div>
+            <div class="card-box-single d-flex justify-content-center">
+                <img class="card-image" src="..{{post.picture}}" alt="pic">
+                
             </div>
-
-
         </div>
     </div>
+
+    <div class="pic-desc text-white">{{post.description}}</div>
 
     <div>
         <!-- COMMENT Button trigger modal -->
@@ -47,12 +47,12 @@
             </div>
         </form>
 
-
+{{#if isOwner.valid}}
         <!-- EDIT Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
             Edit Post
         </button>
-
+{{/if}}
         <!-- EDIT Modal -->
         <form class="edit-post-form">
         <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
@@ -88,12 +88,12 @@
 
 
 
-
+{{#if isOwner.valid}}
         <!-- DELETE Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal">
             Delete Post
         </button>
-
+{{/if}}
         <!-- DELETE Modal -->
         <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -122,18 +122,10 @@
 
 
 
-        <div class="d-flex flex-column">
+        <div class="comment-box-single d-flex flex-column">
             {{#each post.comments as |comment|}}
             {{>comments}}
             {{/each}}
-            {{!-- <h4 class="text-white">USERNAME</h4>
-            <p class="text-white">Comment</p>
-            <h4 class="text-white">USERNAME</h4>
-            <p class="text-white">Comment</p>
-            <h4 class="text-white">USERNAME</h4>
-            <p class="text-white">Comment</p>
-            <h4 class="text-white">USERNAME</h4>
-            <p class="text-white">Comment</p> --}}
         </div>
 
 
