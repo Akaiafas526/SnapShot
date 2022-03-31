@@ -7,6 +7,7 @@ const post = document.querySelector('.post');
 
 async function deletePost()  {
     const id = post.getAttribute('data-postId')
+    console.log(id)
     const data = await fetch(`/api/post/${id}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },

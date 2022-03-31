@@ -8,7 +8,7 @@
       
         <div class="card-container d-flex justify-content-center">
             <div class="card-box">
-                <img class="card-image" src="./images/start-background.jpg" alt="pic">
+                <img class="card-image" src=".{{post.picture}}" alt="pic">
                 <div class="pic-desc">DESCRIPTION</div>
             </div>
 
@@ -24,11 +24,11 @@
 
         <!-- COMMENT Modal -->
         <form class="comment-form">
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">New Comment</h5>
+                        <h5 class="modal-title" id="commentModalLabel">New Comment</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <input type="hidden" name="postId" value="{{post.id}}">
@@ -118,7 +118,7 @@
 
 
 
-        <div class="d-flex flex-column>
+        <div class="d-flex flex-column">
             {{#each post.comments as |comment|}}
             {{>comments}}
             {{/each}}
