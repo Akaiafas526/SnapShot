@@ -1,3 +1,5 @@
+let myModal = new bootstrap.Modal(document.getElementById('registerModal'), {});
+
 const registerFormHandler = async function(event){
     event.preventDefault();
 
@@ -17,7 +19,9 @@ const registerFormHandler = async function(event){
     
     if(response.ok){
         document.location.replace('/');
-    } 
+    } else {
+        myModal.show()
+    }
 };
 
 document
