@@ -1,6 +1,6 @@
 const deleteBtn = document.querySelector('.deleteModalBtn');
 const editBtn = document.querySelector('.editModalBtn');
-const cFormEl = document.querySelector(".comment-post-form");
+const cFormEl = document.querySelector(".comment-form");
 const eFormEl = document.querySelector(".edit-post-form")
 const post = document.querySelector('.post');
 const comments = document.querySelector('.comments');
