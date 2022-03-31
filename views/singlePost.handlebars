@@ -8,8 +8,13 @@
       
         <div class="card-container d-flex justify-content-center">
             <div class="card-box">
+<<<<<<< HEAD
                 <img class="card-image" src="..{{post.picture}}" alt="pic">
                 <div class="pic-desc">DESCRIPTION</div>
+=======
+                <img class="card-image" src=".{{post.picture}}" alt="pic">
+                <div class="pic-desc">{{post.description}}</div>
+>>>>>>> c2b820ed32088d294ed1a8abcaa9d57023867405
             </div>
 
 
@@ -52,13 +57,15 @@
         </button>
 
         <!-- EDIT Modal -->
-        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <form class="edit-post-form">
+        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Edit Post</h5>
+                        <h5 class="modal-title" id="editModalLabel">Edit Post</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
+                       <input type="hidden" name="postId" value="{{post.id}}">
                     <div class="modal-body">
 
                         <div class="text-black post-container flex-column d-flex ">
@@ -68,11 +75,10 @@
                                 <input class="post-title" type="text" name="title">
                                 <div>Decription</div>
                                 <input class="description-box" type="text" name="description">
-                                <button class="post-btn" type="submit">+</button>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
                                         data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary editModalBtn">Save changes</button>
+                                    <button  class="btn btn-primary editModalBtn">Save changes</button>
 
                                 </div>
                             </div>
@@ -81,6 +87,7 @@
                 </div>
             </div>
         </div>
+        </form>
 
 
 
@@ -106,7 +113,7 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Don't
                                         Delete</button>
-                                    <button type="submit" class="btn btn-primary deleteModalBtn">Delete</button>
+                                    <button  class="btn btn-primary deleteModalBtn">Delete</button>
 
                                 </div>
                             </div>
