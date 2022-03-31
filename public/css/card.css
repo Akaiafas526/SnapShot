@@ -115,7 +115,13 @@ input[type="file"]{
 
 /* back button */
 .backBtn{
-    margin: 30px;
+   margin: 10px 0px 0px 20px;
+   padding: 10px;
+   font-size: 20px;
+   color: black;
+   background-color: white;
+   border-radius: 20px;
+
 }
 
 /* tagdropdown */
