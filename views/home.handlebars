@@ -1,92 +1,96 @@
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<div class="d-flex text-white justify-content-between ">
+  <!-- Button trigger modal -->
+  <button type="button" class="newPostBtn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Add New Post
   </button>
-
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">New Post</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <form class="formPic">
-
-                <div class="text-white post-container flex-column d-flex ">
-                    <div class="align-items-center">
-                        <div>Create New Post</div>
-                        <div>Title:</div>
-                        <input class="post-title" type="text" name="title">
+  <h1 class=" p-3 mb-2 ">Project 2</h1>
+  <nav class=" d-flex flex-row align-items-center p-4">
+    <a class="px-4 text-decoration-none text-white fs-2 " href="#" id="logout">Logout</a>
+  </nav>
+</div>
 
 
-                        <label class="pictureInput" for="picture">
-                            <input type="file" name="picture" class="upload"/>
-                        </label>
-
-                        <label for="description">Description</label>
-                <input class="description-box" type="text" name="description">
-                <label for="tags">Tags</label>
-                <select class="tags" name="tags">
-                    <option value="none" name="none">name</option>
-                </select> 
-                        <button class="post-btn" type="submit">+</button>
-                    </div>
-                </div>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
+<!-- Add New Post Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New Post</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="formPic">
+          <div class="">
+            <div class=" d-flex flex-column align-items-center">
+              <div class="text-black titleTextModal">Title:</div>
+              <input class="post-title titleBoxModal" type="text" name="title">
+              <label class="pictureInput" for="picture">
+                <input type="file" name="picture" class="upload" />
+              </label>
+              <div class="text-black descTextModal" for="description">Description</div>
+              <input class="descBoxModal" type="text" name="description">
+              <label for="tags tagTextModal" class="text-black">Tags</label>
+              <select class="tags text-black" name="tags">
+                <option value="none" name="none">name</option>
+              </select>
+            </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
         </form>
-        </div>
       </div>
     </div>
   </div>
+</div>
 {{!-- <div>
-    <form class="formPic">
+  <form class="formPic">
 
-        <div class="text-white post-container flex-column d-flex ">
-            <div class="align-items-center">
-                <div>Create New Post</div>
-                <div>Title:</div>
-                <input class="post-title" type="text" name="title">
+    <div class="text-white post-container flex-column d-flex ">
+      <div class="align-items-center">
+        <div>Create New Post</div>
+        <div>Title:</div>
+        <input class="post-title" type="text" name="title">
 
-             
-                <label class="pictureInput" for="picture">
-                    <input type="file" name="picture" class="upload"/>
-                </label>
 
-                <label for="description">Description</label>
-                <input class="description-box" type="text" name="description">
-                <label for="tags">Tags</label>
-                <select class="tags" name="tags">
-                    <option value="none" name="none">name</option>
-                </select> 
-                <button class="post-btn" type="submit">+</button>
-            </div>
-        </div>
-    </form>
-  </div> --}}
+        <label class="pictureInput" for="picture">
+          <input type="file" name="picture" class="upload" />
+        </label>
+
+        <label for="description">Description</label>
+        <input class="description-box" type="text" name="description">
+        <label for="tags">Tags</label>
+        <select class="tags" name="tags">
+          <option value="none" name="none">name</option>
+        </select>
+        <button class="post-btn" type="submit">+</button>
+      </div>
+    </div>
+  </form>
+</div> --}}
+<div>
+  <select class="tags tagDropdown" name="tags">
+    <option value="none" name="none">name</option>
+  </select>
+</div>
 <div class="container d-flex flex-wrap">
-    <select class="tags" name="tags">
-                    <option value="none" name="none">name</option>
-                </select>
-{{#each post}}
-<div class="card-box">
-    
-    <a href="/posts/{{id}}"><div class="pic-title">{{title}}</div>
-    <div class="pic-username">{{user.username}}</div>
-    <img class="card-image" src={{picture}} alt="pic">
-    <div class="pic-desc">{{description}}</div>
+  {{#each post}}
+  <div class="card-box">
+
+    <a href="/posts/{{id}}">
+      <div class="pic-title">{{title}}</div>
+      <div class="pic-username">{{user.username}}</div>
+      <img class="card-image" src={{picture}} alt="pic">
+      <div class="pic-desc">{{description}}</div>
     </a>
 
   </div>
-{{/each}}
+  {{/each}}
 
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="js/post.js"></script>
 </daiv>
