@@ -6,17 +6,20 @@ const validFileTypes = ['png','jpg','gif','jpeg']
 const data = new FormData();
 const tagEl = document.querySelectorAll('.tags');
 
-console.log(tagEl,tagEl[0])
+console.log(tagEl )
 
 async function getTags () {
     const tags = await fetch('/api/tag')
     const tagData = await tags.json()
     tagData.forEach(tag=>{
-        const option = document.createElement('option')
-        option.text=tag.name
-        option.value= tag.id
-        tagEl[0].appendChild(option)
-        tagEl[1].appendChild(option)
+        const option1 = document.createElement('option')
+        const option2 = document.createElement('option')
+        option1.text=tag.name
+        option2.text=tag.name
+        option1.value= tag.id
+        option2.value= tag.id
+        tagEl[0].appendChild(option1)
+        tagEl[1].appendChild(option2)
     })
 }
 // Checks for picture extension
@@ -35,7 +38,7 @@ formEl.addEventListener('change',(e)=>{
     e.preventDefault()
     const file = e.target.files
     console.log(file)
-    if (file.length){
+    if (file?.length){
         const picture = checkExtension(file[0])
         if (!picture){
             return
@@ -73,4 +76,13 @@ formEl.addEventListener('submit',async (e)=>{
     }
 })
 
-getTags();
+tagEl[1].addEventListener('change',(e)=>{
+    e.preventDefault()
+    
+    if (e.target.value==='all'){
+        window.location.href = '/'
+    } else {
+        window.location.href=`/tag/${e.target.value}`
+    }
+})
+// getTags();
