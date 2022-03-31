@@ -10,7 +10,7 @@
 
         <div class="card-container d-flex justify-content-center">
             <div class="card-box">
-                <img class="card-image" src=".{{post.picture}}" alt="pic">
+                <img class="card-image" src="..{{post.picture}}" alt="pic">
                 <div class="pic-desc">{{post.description}}</div>
             </div>
 
@@ -48,12 +48,12 @@
             </div>
         </form>
 
-
+{{#if isOwner.valid}}
         <!-- EDIT Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
             Edit Post
         </button>
-
+{{/if}}
         <!-- EDIT Modal -->
         <form class="edit-post-form">
         <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
@@ -89,12 +89,12 @@
 
 
 
-
+{{#if isOwner.valid}}
         <!-- DELETE Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal">
             Delete Post
         </button>
-
+{{/if}}
         <!-- DELETE Modal -->
         <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">

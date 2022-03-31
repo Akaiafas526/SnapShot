@@ -4,12 +4,12 @@
 
 
 
-
+{{#if ../isOwner.valid}}
     <!-- Edit Comment Button trigger modal -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editCommentModal">
         Edit Comment
     </button>
-
+{{/if}}
     <!-- Edit Comment Modal -->
     <form class="edit-comment-form">
     <div class="modal fade" id="editCommentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -34,12 +34,13 @@
 </div>
 </div>
 </form>
-
+<p>TEST{{isOwner.valid}}</p>
+{{#if ../../isOwner.valid}}
     <!-- Delete Comment Button trigger modal -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteCommentModal">
         Delete Comment
     </button>
-
+{{/if}}
     <!-- Delete Comment Modal -->
     <form class="delete-comment-form">
     <div class="modal fade" id="deleteCommentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
