@@ -3,8 +3,10 @@ const editBtn = document.querySelector('.editModalBtn');
 const formEl = document.querySelector(".comment-form");
 const post = document.querySelector('.post');
 const comments = document.querySelector('.comments');
-const deleteCommentBtn =document.querySelector('.deleteCommentBtn');
-
+const deleteCommentBtn =document.querySelectorAll('.deleteCommentBtn');
+deleteCommentBtn.forEach(( btn) => {
+  btn.addEventListener('click', deleteComment)
+})
 
 const postId = post.getAttribute('data-postId')
 
@@ -24,23 +26,26 @@ async function deletePost()  {
 deleteBtn.addEventListener('click', deletePost)
 
 
+console.log('heloo_______')
 
-
-async function deleteComment(){
-    const id = comments.getAttribute('data-commentId')
-    const data = await fetch(`/api/comment/${id}`, {
+async function deleteComment(e){
+  e.preventDefault()
+  const commentid = e.currentTarget.getAttribute('data-id')
+  console.log(commentid, e.target, e.currentTarget)
+    
+    const data = await fetch(`/api/comment/${commentid}`, {
         method: 'DELETE',
         headers: { 'Content-type': 'application/json' },
     })
     if (data.ok){
-      console.log(postId)
-      document.location.assign(`/posts/4`);
+   
+      // document.location.assign(`/posts/${postId}`);
     } 
     else{
       console.log('ERROR')
     }
 }
-deleteCommentBtn?.addEventListener('click', deleteComment)
+
 
 
 
