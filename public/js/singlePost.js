@@ -1,10 +1,9 @@
 const deleteBtn = document.querySelector('.deleteModalBtn');
 const editBtn = document.querySelector('.editModalBtn');
-
-const commentBtn = document.querySelector('.commentModalBtn');
-const commentBoxEl = document.querySelector('.newComment');
-
+const formEl = document.querySelector(".comment-form");
 const post = document.querySelector('.post');
+
+
 
 async function deletePost()  {
     const id = post.getAttribute('data-postId')
@@ -38,3 +37,23 @@ deleteBtn.addEventListener('click', deletePost)
 // editBtn.addEventListener('click', editPost)
 
 
+
+
+
+
+formEl.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const response = await fetch("/api/comment", {
+    method: "POST",
+    body: JSON.stringify({
+      postId: e.target[1].value,
+      text: e.target[2].value,
+    }),
+    headers: { "Content-Type": "application/json" },
+  });
+  if (response.ok) {
+    document.location.reload();
+  } else {
+    console.log("Unable to add comment");
+  }
+});

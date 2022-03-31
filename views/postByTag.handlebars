@@ -1,0 +1,102 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Add New Post
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New Post</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form class="formPic">
+
+                <div class="text-white post-container flex-column d-flex ">
+                    <div class="align-items-center">
+                        <div>Create New Post</div>
+                        <div>Title:</div>
+                        <input class="post-title" type="text" name="title">
+
+
+                        <label class="pictureInput" for="picture">
+                            <input type="file" name="picture" class="upload"/>
+                        </label>
+
+                        <label for="description">Description</label>
+                <input class="description-box" type="text" name="description">
+                <label for="tags">Tags</label>
+                <select class="tags" name="tags">
+                  <option disabled selected value>---select---</option>
+                    <option value="all" name="all">all</option>
+                    {{#each tag}}
+                
+                    <option value={{id}} >{{name}}</option>
+                    {{/each}}
+                </select> 
+                        {{!-- <button class="post-btn" type="submit">+</button> --}}
+                    </div>
+                </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{{!-- <div>
+    <form class="formPic">
+
+        <div class="text-white post-container flex-column d-flex ">
+            <div class="align-items-center">
+                <div>Create New Post</div>
+                <div>Title:</div>
+                <input class="post-title" type="text" name="title">
+
+             
+                <label class="pictureInput" for="picture">
+                    <input type="file" name="picture" class="upload"/>
+                </label>
+
+                <label for="description">Description</label>
+                <input class="description-box" type="text" name="description">
+                <label for="tags">Tags</label>
+                <select class="tags" name="tags">
+                    <option value="none" name="none">name</option>
+                </select> 
+                <button class="post-btn" type="submit">+</button>
+            </div>
+        </div>
+    </form>
+  </div> --}}
+    <select class="tags" name="tags">
+                   <option disabled selected value>---select---</option>
+                   <option value="all" name="all">all</option>
+                    {{#each tag}}
+                
+                    <option value={{id}} >{{name}}</option>
+                    {{/each}}
+                </select>
+<div class="container d-flex flex-wrap">
+{{#each post}}
+<div class="card-box">
+    
+    <a href="/posts/{{id}}"><div class="pic-title">{{title}}</div>
+    <div class="pic-username">{{user.username}}</div>
+    <img class="card-image" src={{picture}} alt="pic">
+    <div class="pic-desc">{{description}}</div>
+    </a>
+
+  </div>
+{{/each}}
+
+</div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="/js/post.js"></script>

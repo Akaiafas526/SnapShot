@@ -29,9 +29,14 @@
               </label>
               <div class="text-black descTextModal" for="description">Description</div>
               <input class="descBoxModal" type="text" name="description">
-              <label for="tags tagTextModal" class="text-black">Tags</label>
-              <select class="tags text-black" name="tags">
-                <option value="none" name="none">name</option>
+              <label for="tags" class="tagTextModal text-black">#</label>
+              <select class="tags" name="tags">
+                <option disabled selected value>---select---</option>
+                <option value="all" name="all">all</option>
+                {{#each tag}}
+
+                <option value={{id}}>{{name}}</option>
+                {{/each}}
               </select>
             </div>
           </div>
@@ -39,39 +44,22 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">Save changes</button>
+
+
         </form>
       </div>
     </div>
   </div>
 </div>
-{{!-- <div>
-  <form class="formPic">
 
-    <div class="text-white post-container flex-column d-flex ">
-      <div class="align-items-center">
-        <div>Create New Post</div>
-        <div>Title:</div>
-        <input class="post-title" type="text" name="title">
-
-
-        <label class="pictureInput" for="picture">
-          <input type="file" name="picture" class="upload" />
-        </label>
-
-        <label for="description">Description</label>
-        <input class="description-box" type="text" name="description">
-        <label for="tags">Tags</label>
-        <select class="tags" name="tags">
-          <option value="none" name="none">name</option>
-        </select>
-        <button class="post-btn" type="submit">+</button>
-      </div>
-    </div>
-  </form>
-</div> --}}
 <div>
   <select class="tags tagDropdown" name="tags">
-    <option value="none" name="none">name</option>
+    <option disabled selected value>---select---</option>
+    <option value="all" name="all">all</option>
+    {{#each tag}}
+
+    <option value={{id}}>{{name}}</option>
+    {{/each}}
   </select>
 </div>
 <div class="container d-flex flex-wrap">
@@ -93,4 +81,4 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="js/post.js"></script>
-</daiv>
+</div>
