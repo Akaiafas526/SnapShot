@@ -31,6 +31,7 @@ console.log('heloo_______')
 
 async function deleteComment(e){
   e.preventDefault()
+  e.stopPropagation()
   const commentid = e.currentTarget.getAttribute('data-id')
   console.log(commentid, e.target, e.currentTarget)
     
@@ -40,7 +41,7 @@ async function deleteComment(e){
     })
     if (data.ok){
    
-      // document.location.assign(`/posts/${postId}`);
+      document.location.assign(`/posts/${postId}`);
     } 
     else{
       console.log('ERROR')
