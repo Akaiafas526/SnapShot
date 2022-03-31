@@ -53,7 +53,7 @@ formEl.addEventListener("submit", async (e) => {
     headers: { "Content-Type": "application/json" },
   });
   if (response.ok) {
-    document.location.reload();
+    // document.location.reload();
   } else {
     console.log("Unable to add comment");
   }
