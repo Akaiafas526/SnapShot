@@ -1,17 +1,19 @@
-    
-    
-    <div class="d-flex justify-content-center">
-        <div class="text-white d-flex flex-column align-items-center">
-            <h2 class="username-top mt-4">{{post.0.user.username}}</h2>
-         </div>
+<div class="d-flex justify-content-between flex-column">
+    <div class="text-white d-flex justify-content-between ">
+        <input type="button" onclick="location.href='/';" value="Go to Homepage" class="backBtn" />
+        <h2 class="username-top mt-4">{{post.0.user.username}}</h2>
+        <a class="px-4 text-decoration-none text-white fs-2 " href="#" id="logout">Logout</a>
     </div>
+</div>
 
 
 
 {{#each post}}
-    <div class="card-box">
-        <a href="index.html"><div class="pic-title">{{title}}</div></a>
-        <img class="card-image" src="../{{picture}}" alt="pic">
-        <div class="pic-desc">{{description}}</div>
-      </div>
+<div class="card-box">
+    <a href="index.html">
+        <div class="pic-title">{{title}}</div>
+    </a>
+    <img class="card-image" src="../{{picture}}" alt="pic">
+    <div class="pic-desc">{{description}}</div>
+</div>
 {{/each}}
