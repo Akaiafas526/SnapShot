@@ -48,7 +48,7 @@ router.delete('/:id',authorize,  async (req, res) => {
       where: {
         id: req.params.id,
         // user_id:1
-        user_id: req.session.user_id,
+        // user_id: req.session.user_id,
       },
     });
 

@@ -2,12 +2,15 @@ const deleteBtn = document.querySelector('.deleteModalBtn');
 const editBtn = document.querySelector('.editModalBtn');
 const formEl = document.querySelector(".comment-form");
 const post = document.querySelector('.post');
+const comments = document.querySelector('.comments');
+const deleteCommentBtn =document.querySelector('.deleteCommentBtn');
 
+
+const postId = post.getAttribute('data-postId')
 
 
 async function deletePost()  {
-    const id = post.getAttribute('data-postId')
-    const data = await fetch(`/api/post/${id}`, {
+    const data = await fetch(`/api/post/${postId}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
     })
@@ -19,6 +22,28 @@ async function deletePost()  {
     }
 }
 deleteBtn.addEventListener('click', deletePost)
+
+
+
+
+async function deleteComment(){
+    const id = comments.getAttribute('data-commentId')
+    const data = await fetch(`/api/comment/${id}`, {
+        method: 'DELETE',
+        headers: { 'Content-type': 'application/json' },
+    })
+    if (data.ok){
+      console.log(postId)
+      document.location.assign(`/posts/4`);
+    } 
+    else{
+      console.log('ERROR')
+    }
+}
+deleteCommentBtn?.addEventListener('click', deleteComment)
+
+
+
 
 
 // ask at start of class
