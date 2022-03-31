@@ -9,48 +9,8 @@
   </nav>
 </div>
 
+{{>newPost}}
 
-<!-- Add New Post Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New Post</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form class="formPic">
-          <div class="">
-            <div class=" d-flex flex-column align-items-center">
-              <div class="text-black titleTextModal">Title:</div>
-              <input class="post-title titleBoxModal" type="text" name="title">
-              <label class="pictureInput" for="picture">
-                <input type="file" name="picture" class="upload" />
-              </label>
-              <div class="text-black descTextModal" for="description">Description</div>
-              <input class="descBoxModal" type="text" name="description">
-              <label for="tags" class="tagTextModal text-black">#</label>
-              <select class="tags" name="tags">
-                <option disabled selected value>---select---</option>
-                <option value="all" name="all">all</option>
-                {{#each tag}}
-
-                <option value={{id}}>{{name}}</option>
-                {{/each}}
-              </select>
-            </div>
-          </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
-
-
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
 
 <div>
   <select class="tags tagDropdown" name="tags">
@@ -64,16 +24,7 @@
 </div>
 <div class="container d-flex flex-wrap">
   {{#each post}}
-  <div class="card-box">
-
-    <a href="/posts/{{id}}">
-      <div class="pic-title">{{title}}</div>
-      <div class="pic-username">{{user.username}}</div>
-      <img class="card-image" src={{picture}} alt="pic">
-      <div class="pic-desc">{{description}}</div>
-    </a>
-
-  </div>
+    {{>posts}}
   {{/each}}
 
 </div>
