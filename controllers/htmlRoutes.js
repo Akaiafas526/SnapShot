@@ -28,8 +28,10 @@ router.get('/posts/:id', authorize, async (req, res) => {
             include: [{model:Comment,include:[{model:User}]},{model:User},{model:Tag}]
         });
         const post = posts.get({plain:true});
-        console.log(post,'HERE')
-        res.render('singlePost',{post})
+        console.log(post,'HERE',req.session.userId)
+        const isOwner = {valid:req.session.userId===post.user.id}
+        console.log('VALID ',isOwner)
+        res.render('singlePost',{post,isOwner})
         ////res.status(200).json(post)
     } catch (err) {
         res.status(400).json(err);

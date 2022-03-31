@@ -3,6 +3,7 @@ const { Post } = require('../../models');
 const authorize = require('../../utils/auth');
 const path = require('path');
 const multer = require('multer');
+const fs = require('fs');
 
 
 // Sets storage folder
@@ -41,7 +42,7 @@ router.post('/', authorize,upload.single('picture'), async (req, res) => {
             // userId:1,
             tagId:req.body.tagId,
             userId: req.session.userId,
-            picture:`./uploads/${req.file.filename}`
+            picture:`/uploads/${req.file.filename}`
         });
         
         res.status(200).json(newPost)
@@ -73,10 +74,10 @@ router.put('/:id',authorize,  async (req, res) => {
     res.status(400).json(err);
   }
 });
-
 // withAuth
 router.delete('/:id', authorize, async (req, res) => {
   try {
+    const postPicture = await Post.findByPk(req.params.id)
     const deletedPost = await Post.destroy({
       where: {
         id: req.params.id,
@@ -89,7 +90,9 @@ router.delete('/:id', authorize, async (req, res) => {
       res.status(404).json({ message: 'Invalid post ID!' });
       return;
     }
-
+    fs.unlink(`./public${postPicture.picture}`,(err)=>{
+      err?console.log(err):console.log('Deleted');
+    })
     res.status(200).json('Post Deleted');
   } catch (err) {
     res.status(500).json(err);
