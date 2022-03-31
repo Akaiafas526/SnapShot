@@ -4,17 +4,18 @@ const cFormEl = document.querySelector(".comment-form");
 const eFormEl = document.querySelector(".edit-post-form")
 const post = document.querySelector('.post');
 const comments = document.querySelector('.comments');
-const deleteCommentBtn =document.querySelectorAll('.deleteCommentBtn');
-
-let myModal = new bootstrap.Modal(document.getElementById('deleteModal'), {});
+const deleteCommentBtn =document.querySelectorAll('#deleteComment');
+const deleteCommentModalBtn =document.querySelector('.deleteCommentBtn');
+console.log(deleteCommentModalBtn)
+let myModal = new bootstrap.Modal(document.getElementById('deleteCommentModal'), {});
 
 
 deleteCommentBtn.forEach(( btn) => {
   btn.addEventListener('click', deleteComment)
 })
-
+deleteCommentModalBtn.addEventListener('click',deleteConfirmed)
 const postId = post.getAttribute('data-postId')
-
+let commentid;
 
 async function deletePost()  {
     const data = await fetch(`/api/post/${postId}`, {
@@ -31,25 +32,30 @@ async function deletePost()  {
 deleteBtn.addEventListener('click', deletePost)
 
 
-console.log('heloo_______')
+async function deleteConfirmed(){
+  const data = await fetch(`/api/comment/${commentid}`, {
+    method: 'DELETE',
+    headers: { 'Content-type': 'application/json' },
+})
+if (data.ok){
 
-async function deleteComment(e){
+  document.location.assign(`/posts/${postId}`);
+} 
+else{
+  console.log('ERROR')
+}
+}
+
+
+function deleteComment(e){
   e.preventDefault()
   e.stopPropagation()
-  const commentid = e.currentTarget.getAttribute('data-id')
-  console.log(commentid, e.target, e.currentTarget,this)
+  console.log(e,e.target.dataset.id)
+  commentid = e.target.dataset.id
+  // console.log(commentid, e.target, e.currentTarget,this)
     myModal.show()
-    const data = await fetch(`/api/comment/${commentid}`, {
-        method: 'DELETE',
-        headers: { 'Content-type': 'application/json' },
-    })
-    if (data.ok){
-   
-      // document.location.assign(`/posts/${postId}`);
-    } 
-    else{
-      console.log('ERROR')
-    }
+    // deleteConfirmed(commentid)
+    
 }
 
 
