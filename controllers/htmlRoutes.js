@@ -9,9 +9,11 @@ router.get('/',authorize,  async (req, res) => {
         const posts = await Post.findAll({
             include: [{model:Comment},{model:User},{model:Tag}]
         });
+        const tags = await Tag.findAll();
+        const tag = tags.map(tag=>tag.get({plain:true}))
         const post = posts.map(post=>post.get({plain:true}));
         console.log(post)
-        res.render('home',{post})
+        res.render('home',{post,tag})
         // res.status(200).json(post)
     } catch (err) {
         res.status(400).json(err);
@@ -46,10 +48,13 @@ router.get('/tag/:id',authorize,  async (req, res) => {
                 tagId:req.params.id
             }
         });
+        const tags = await Tag.findAll();
+        
         const post = posts.map(post=>post.get({plain:true}));
-        console.log(post)
-        // res.render('SOME_VIEW',post)
-        res.status(200).json(post)
+        const tag = tags.map(tag=>tag.get({plain:true}))
+        console.log(post,tag)
+        res.render('postByTag',{post,tag})
+        // res.status(200).json(post)
     } catch (err) {
         res.status(400).json(err);
     }
