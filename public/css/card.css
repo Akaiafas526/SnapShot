@@ -133,6 +133,15 @@ input[type="file"]{
 .logoutBtn{
     margin: 10px 20px 0px 0px;
 }
+.navbar{
+    margin-left: -10%;
+}
+.btn-primary {
+    background-color: transparent;
+    border-color: transparent;
+
+}
+
 
 
 
@@ -155,5 +164,18 @@ input[type="file"]{
     .input{
         left: 20%;
         width: 60%;
+    }
+    .navbar{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        left: 5%;
+    }
+    .card-box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
