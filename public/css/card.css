@@ -196,6 +196,11 @@ input[type="file"]{
 
 }
 
+.single-post-button {
+    background-color: transparent;
+    border: none;
+}
+
 
 
 
