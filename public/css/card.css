@@ -172,11 +172,14 @@ input[type="file"]{
 .newPostBtn{
     margin: 20px 50px 20px 50px;
     background-color: darkcyan;
-    color:white;
-    transition:all 0.2s ease-in-out;
+    color:rgb(228, 228, 228);
+    transition:transform 0.2s ease-in-out;
 }
 .newPostBtn:hover{
-    transform:scale(1.05)
+    transform:scale(1.05);
+    color:white;
+    box-shadow: 0 0 0.3rem rgb(50, 191, 191);
+    border-color:rgb(43, 189, 189);
 }
 /* back button */
 .backBtn{
@@ -215,7 +218,7 @@ input[type="file"]{
     margin: 10px 30px 10px 30px;
     background-color: darkcyan;
     color:white;
-    transition:all 0.2s ease-in-out;
+    transition:transform 0.2s ease-in-out;
 }
 
 .single-post-button:hover{
@@ -224,9 +227,22 @@ input[type="file"]{
 
 .projectName{
     order:1;
+    /* transition:all 0.2s ease-in-out; */
+
 }
 .profile{
     order:4;
+    /* transition:all 0.2s ease-in-out; */
+
+}
+.navigation p{
+    margin:0;
+    transition:transform 0.2s ease-in-out;
+
+}
+.navigation p:hover{
+    transform: scale(1.05);
+    text-shadow: 0 0 0.3rem white;
 }
 
 
