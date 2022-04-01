@@ -26,6 +26,18 @@ body{
 .card-box:hover{
     border: 5px solid darkcyan;
 }
+
+.card-box-single{
+height: 200px;
+margin: 30px;
+text-align: center;
+}
+
+.comment-box-single {
+    margin-top: 20px;
+    align-items: center;
+}
+
 .pic-title{
     font-size: 30px;
     padding: 10px 0 0 0;
