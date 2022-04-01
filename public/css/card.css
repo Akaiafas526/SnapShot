@@ -34,9 +34,12 @@ body{
 }
 
 .card-box-single{
-height: 500px;
+width: 500px;
 margin: 30px;
 text-align: center;
+}
+.card-image-single{
+    width:500px;
 }
 
 .post-buttons {
@@ -111,9 +114,10 @@ a{
     width: 540px;
     height: 500px;
     z-index: 15;
-    top: 30%;
-    left: 44%;
-    margin: -100px 0 0 -150px;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    /* margin: -100px 0 0 -150px; */
     background: whitesmoke;
 }
 
@@ -207,24 +211,32 @@ input[type="file"]{
     border: none;
 }
 
-
-
+.projectName{
+    order:1;
+}
+.profile{
+    order:4;
+}
 
 
 
 @media screen and (max-width: 700px) {
     .login-container{
-        width: 300px;
+        width: 400px;
         height: 500px;
         display: flex;
         justify-content: center;
-        margin-left: -128px;
+        /* margin-left: -128px; */
     }
     .login-btn{
-        left: 34%;
-        width: 30%;
-        display: flex;
-        align-items: center;
+        padding: 0.1rem 1rem;
+        width:100px;
+        transform: translate(-50%,0);
+        /* /* left: 34%; */
+        /* width: 30%;  */
+        /* display: flex; */
+        /* text-align: center; */
+        /* align-items: center; */
     }
     .input{
         left: 20%;
@@ -241,6 +253,9 @@ input[type="file"]{
 }
 
 @media screen and (max-width:500px) {
+    .login-container{
+        width:98vw;
+    }
     .navbar{
         display: flex;
         flex-direction: column;

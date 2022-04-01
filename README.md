@@ -6,17 +6,25 @@ A social app where you can post your favorite pics, see your friends pics, and l
 
 ## Table of Contents
 
+[Links](#links)
+
+[Media](#media)
+
 [Installation](#installation)
 
 [Usage](#usage)
 
 [License](#license)
 
-[Contributing](#contributing)
-
-[Tests](#tests)
+[Contributors](#contributors)
 
 [Questions](#questions)
+
+## Links
+[SnapShot](https://snapshotban.herokuapp.com/)
+
+## Media
+
 
 ## Installation
 To install the necessary dependencies, run the following command:
@@ -29,13 +37,8 @@ Install the dependencies with npm install and run the server with npm start.  To
 ## License
 This product is licensed under MIT
 
-## Contributing
+## Contributors
 No contributions at this time
-
-## Tests
-To run tests, run the following command:
-
-    npm test
 
 ## Questions
 If you have any questions about the repo, open an issue or contact me directly at <brian.t.halpin@gmail.com>. You can find more
