@@ -178,4 +178,14 @@ input[type="file"]{
         justify-content: center;
         align-items: center;
     }
+    .tagAndProfile{
+        display: flex;
+        flex-direction: column;
+    }
+    .singlePostNav{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
