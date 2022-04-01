@@ -37,7 +37,7 @@ function checkExtension (file) {
 formEl.addEventListener('change',(e)=>{
     e.preventDefault()
     const file = e.target.files
-    console.log(file)
+    console.log(file,'file')
     if (file?.length){
         const picture = checkExtension(file[0])
         if (!picture){
@@ -45,6 +45,10 @@ formEl.addEventListener('change',(e)=>{
         }
         const image = URL.createObjectURL(file[0])
         inputEl.style = `background-image: url(${image})`
+    }
+    else {
+        inputEl.style = `background-image: url(/images/dropzone.png)`
+
     }
 })
 

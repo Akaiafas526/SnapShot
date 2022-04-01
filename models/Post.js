@@ -26,6 +26,7 @@ Post.init(
     // On delete?? 
     userId: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
           model: 'user',
           key: 'id'
