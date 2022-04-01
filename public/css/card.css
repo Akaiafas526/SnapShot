@@ -26,6 +26,7 @@ body{
     text-align: center;
     background-color: whitesmoke;
     transition: transform 0.2s ease-in-out;
+    padding:0 1rem;
 }
 .card-box:hover{
     border: 5px solid darkcyan;
@@ -37,6 +38,9 @@ body{
 width: 500px;
 margin: 30px;
 text-align: center;
+}
+.card-image-single{
+    width:500px;
 }
 
 .card-image-single{
@@ -115,9 +119,10 @@ a{
     width: 540px;
     height: 500px;
     z-index: 15;
-    top: 30%;
-    left: 44%;
-    margin: -100px 0 0 -150px;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    /* margin: -100px 0 0 -150px; */
     background: whitesmoke;
 }
 
@@ -167,11 +172,14 @@ input[type="file"]{
 .newPostBtn{
     margin: 20px 50px 20px 50px;
     background-color: darkcyan;
-    color:white;
-    transition:all 0.2s ease-in-out;
+    color:rgb(228, 228, 228);
+    transition:transform 0.2s ease-in-out;
 }
 .newPostBtn:hover{
-    transform:scale(1.05)
+    transform:scale(1.05);
+    color:white;
+    box-shadow: 0 0 0.3rem rgb(50, 191, 191);
+    border-color:rgb(43, 189, 189);
 }
 /* back button */
 .backBtn{
@@ -210,31 +218,59 @@ input[type="file"]{
     margin: 10px 30px 10px 30px;
     background-color: darkcyan;
     color:white;
-    transition:all 0.2s ease-in-out;
+    transition:transform 0.2s ease-in-out;
 }
 
 .single-post-button:hover{
     transform:scale(1.05)
 }
 
+.projectName{
+    order:1;
+    /* transition:all 0.2s ease-in-out; */
 
+}
+.profile{
+    order:4;
+    /* transition:all 0.2s ease-in-out; */
 
+}
+.navigation p{
+    margin:0;
+    transition:transform 0.2s ease-in-out;
+
+}
+.navigation p:hover{
+    transform: scale(1.05);
+    text-shadow: 0 0 0.3rem white;
+}
 
 
 
 @media screen and (max-width: 700px) {
+    .navigation{
+        margin:2rem 1rem !important;
+    }
     .login-container{
-        width: 300px;
+        width: 400px;
         height: 500px;
         display: flex;
         justify-content: center;
-        margin-left: -128px;
+        /* margin-left: -128px; */
     }
     .login-btn{
-        left: 34%;
-        width: 30%;
-        display: flex;
-        align-items: center;
+        padding: 0.1rem 1rem;
+        width:100px;
+        transform: translate(-50%,0);
+        /* /* left: 34%; */
+        /* width: 30%;  */
+        /* display: flex; */
+        /* text-align: center; */
+        /* align-items: center; */
+    }
+    .newPostBtn{
+        font-size: 1.3rem !important;
+        width:250px;
     }
     .input{
         left: 20%;
@@ -250,7 +286,29 @@ input[type="file"]{
     }
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:524px) {
+    .navigation>div{
+        margin-bottom:1.6rem;
+    }
+    .profile-container{
+        order:10;
+        width:100vw;
+        text-align: center;
+
+    }
+    .logout-container{
+        order:11;
+        text-align: center;
+        width: 100vw;
+
+    }
+    .projectName-container{
+        width:100vw;
+        text-align: center;
+    }
+    .login-container{
+        width:98vw;
+    }
     .navbar{
         display: flex;
         flex-direction: column;
@@ -269,11 +327,26 @@ input[type="file"]{
     .tagAndProfile{
         display: flex;
         flex-direction: column;
-        margin-top:5rem;
+        /* margin-top:4rem; */
+    }
+    .newPostBtn{
+        margin-top:0;
     }
     .singlePostNav{
         display: flex;
         flex-direction:row;
         justify-content: space-between;
+    }
+}
+
+@media screen and (max-width:340px) {
+    .card-box{
+        margin:1rem 0;
+        border-radius: 0;
+        border:none;
+        width:100vw;
+    }
+    .card-image{
+        width:98vw;
     }
 }
