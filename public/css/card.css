@@ -34,14 +34,35 @@ body{
 }
 
 .card-box-single{
-height: 200px;
+height: 500px;
 margin: 30px;
 text-align: center;
 }
 
-.comment-box-single {
+.post-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+#comment-box {
     margin-top: 20px;
     align-items: center;
+    border: 5px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comment {
+    width: 400px;
+    text-align: center;
+    border-bottom: 2px solid white;
+    margin-top: 20px;
+}
+
+.comment-text {
+    overflow-wrap: break-word;
+    padding: 0 20px;
 }
 
 .pic-title{
