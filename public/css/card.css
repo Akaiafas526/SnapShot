@@ -34,9 +34,14 @@ body{
 }
 
 .card-box-single{
-height: 200px;
+height: 500px;
 margin: 30px;
 text-align: center;
+}
+
+.post-buttons {
+    display: flex;
+    justify-content: center;
 }
 
 #comment-box {
@@ -49,10 +54,15 @@ text-align: center;
 }
 
 .comment {
-    width: 200px;
+    width: 400px;
+    text-align: center;
+    border-bottom: 2px solid white;
+    margin-top: 20px;
+}
+
+.comment-text {
     overflow-wrap: break-word;
-    /* text-align: center; */
-    margin: 0 !important;
+    padding: 0 20px;
 }
 
 .pic-title{
