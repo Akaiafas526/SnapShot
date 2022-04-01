@@ -22,9 +22,12 @@ body{
     margin: 30px;
     text-align: center;
     background-color: whitesmoke;
+    transition: all 0.2s ease-in-out;
 }
 .card-box:hover{
     border: 5px solid darkcyan;
+    transform: scale(1.05);
+    box-shadow: 0 0 1rem darkcyan;
 }
 .pic-title{
     font-size: 30px;
@@ -96,23 +99,30 @@ a{
 
 .pictureInput{
     display:block;
-    width:100px;
-    height:100px;
+    width:500px;
+    height:500px;
     background-image: url(/images/dropzone.png);
     background-size: cover;
     background-position: center;
+    border:10px solid rgb(40, 123, 255);
+    border-radius: 10px;
+    /* cursor: pointer; */
 }
 input[type="file"]{
     opacity: 0;
-    width:110px;
-    height:110px;
+    width:500px;
+    height:500px;
+    cursor: pointer;
+
 }
 
+.modal-dialog{
+    max-width:600px;
+}
 /* add new post btn */
 .newPostBtn{
     margin: 20px 50px 20px 50px;
 }
-
 /* back button */
 .backBtn{
    margin: 10px 0px 0px 20px;
