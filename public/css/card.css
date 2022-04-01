@@ -141,9 +141,26 @@ input[type="file"]{
     width:250px;
 }
 
+<<<<<<< HEAD
 .light-blue{
     background-color: rgb(233, 236, 246);
 }
+=======
+/* logout */
+.logoutBtn{
+    margin: 10px 20px 0px 0px;
+}
+.navbar{
+    margin-left: -10%;
+}
+.btn-primary {
+    background-color: transparent;
+    border-color: transparent;
+
+}
+
+
+>>>>>>> 7b48aaaba17e6fecfa5cac0fa49199b615713539
 
 
 
@@ -166,6 +183,7 @@ input[type="file"]{
         left: 20%;
         width: 60%;
     }
+<<<<<<< HEAD
     input[type="file"],.pictureInput{
         width:95%;
         max-width:500px;
@@ -177,4 +195,29 @@ input[type="file"]{
 }
 
 @media screen and (max-width:500px) {
+=======
+    .navbar{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        left: 5%;
+    }
+    .card-box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .tagAndProfile{
+        display: flex;
+        flex-direction: column;
+    }
+    .singlePostNav{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+>>>>>>> 7b48aaaba17e6fecfa5cac0fa49199b615713539
 }
