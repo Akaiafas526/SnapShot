@@ -1,7 +1,7 @@
 <!-- Add New Post Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content ">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">New Post</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -10,20 +10,28 @@
         <form class="formPic">
           <div class="">
             <div class=" d-flex flex-column align-items-center">
-              <div class="text-black titleTextModal">Title:</div>
-              <input class="post-title titleBoxModal" type="text" name="title">
+              {{!-- <div class="text-black titleTextModal">Title:</div> --}}
+              <input class="post-title titleBoxModal my-2 form-control light-blue" type="text" name="title" placeholder="Title">
               <label class="pictureInput" for="picture">
                 <input type="file" name="picture" class="upload" />
               </label>
-              <div class="text-black descTextModal" for="description">Description</div>
-              <input class="descBoxModal" type="text" name="description">
-              <label for="tags" class="tagTextModal text-black">#</label>
-              <select class="tags" name="tags">
-                <option disabled selected value>---select---</option>
-                <option value="all" name="all">all</option>
+              {{!-- <div class="text-black descTextModal" for="description">Description</div> --}}
+              {{!-- <input class="descBoxModal my-2" type="text" name="description" placeholder="Description" > --}}
+              
+              
+              <div class="input-group">
+  {{!-- <span class="input-group-text">With textarea</span> --}}
+  <textarea class="form-control descBoxModal my-2 light-blue" aria-label="With textarea" name="description" placeholder="Description"></textarea>
+</div>
+
+
+              {{!-- <label for="tags" class="tagTextModal text-black">#</label> --}}
+              <select class="tags form-select light-blue text-center"  aria-label="Default select example" name="tags">
+                <option disabled selected value>---  Select Hashtag For Post  ---</option>
+                <option value="all" name="all">No Hashtag</option>
                 {{#each tag}}
 
-                <option value={{id}}>{{name}}</option>
+                <option value={{id}}>#{{name}}</option>
                 {{/each}}
               </select>
             </div>

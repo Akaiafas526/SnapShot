@@ -7,7 +7,8 @@ const comments = document.querySelector('.comments');
 const deleteCommentBtn =document.querySelectorAll('#deleteComment');
 const editCommentBtn =document.querySelectorAll('#editComment');
 const deleteCommentModalBtn =document.querySelector('.deleteCommentBtn');
-const editCommentModalBtn =document.querySelector('.editComment');
+const editCommentModal =document.querySelector('.edit-comment-form');
+const editCommentText =document.querySelector('#edit-comment-text');
 console.log(deleteCommentModalBtn)
 let deleteModal = new bootstrap.Modal(document.getElementById('deleteCommentModal'), {});
 let editModal = new bootstrap.Modal(document.getElementById('editCommentModal'), {});
@@ -20,7 +21,7 @@ editCommentBtn.forEach(( btn) => {
   btn.addEventListener('click', editComment)
 })
 deleteCommentModalBtn.addEventListener('click',deleteConfirmed)
-editCommentModalBtn.addEventListener('click',editConfirmed)
+editCommentModal.addEventListener('submit',editConfirmed)
 const postId = post.getAttribute('data-postId')
 let commentid;
 
@@ -54,7 +55,8 @@ else{
 }
 async function editConfirmed(e){
   e.preventDefault()
-  const newText =  e.target.parentElement.parentElement.firstChild.nextElementSibling.value
+  console.log(editCommentText.value)
+  const newText =  editCommentText.value
   const data = await fetch(`/api/comment/${commentid}`, {
     method: 'PUT',
     headers: { 'Content-type': 'application/json' },

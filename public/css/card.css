@@ -3,6 +3,7 @@ body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    background-color: rgb(37, 37, 37);
     background-image: url('../images/darkgb.jpeg');
     background-size:cover;
     background-repeat: no-repeat;
@@ -22,9 +23,12 @@ body{
     margin: 30px;
     text-align: center;
     background-color: whitesmoke;
+    transition: transform 0.2s ease-in-out;
 }
 .card-box:hover{
     border: 5px solid darkcyan;
+    transform: scale(1.05);
+    box-shadow: 0 0 1rem darkcyan;
 }
 
 .card-box-single{
@@ -108,23 +112,30 @@ a{
 
 .pictureInput{
     display:block;
-    width:100px;
-    height:100px;
+    width:500px;
+    height:500px;
     background-image: url(/images/dropzone.png);
     background-size: cover;
     background-position: center;
+    border:10px solid rgb(40, 123, 255);
+    border-radius: 10px;
+    /* cursor: pointer; */
 }
 input[type="file"]{
     opacity: 0;
-    width:110px;
-    height:110px;
+    width:500px;
+    height:500px;
+    cursor: pointer;
+
 }
 
+.modal-dialog{
+    max-width:600px;
+}
 /* add new post btn */
 .newPostBtn{
     margin: 20px 50px 20px 50px;
 }
-
 /* back button */
 .backBtn{
    margin: 10px 0px 0px 20px;
@@ -139,8 +150,14 @@ input[type="file"]{
 /* tagdropdown */
 .tagDropdown{
     margin: 20px 50px 40px 55px;
+    width:250px;
 }
 
+<<<<<<< HEAD
+.light-blue{
+    background-color: rgb(233, 236, 246);
+}
+=======
 /* logout */
 .logoutBtn{
     margin: 10px 20px 0px 0px;
@@ -155,6 +172,7 @@ input[type="file"]{
 }
 
 
+>>>>>>> 7b48aaaba17e6fecfa5cac0fa49199b615713539
 
 
 
@@ -177,6 +195,19 @@ input[type="file"]{
         left: 20%;
         width: 60%;
     }
+<<<<<<< HEAD
+    input[type="file"],.pictureInput{
+        width:95%;
+        max-width:500px;
+        height:400px;
+    }
+    .pictureInput{
+        background-image: url(/images/dropzone-small.png);
+    }
+}
+
+@media screen and (max-width:500px) {
+=======
     .navbar{
         display: flex;
         flex-direction: column;
@@ -200,4 +231,5 @@ input[type="file"]{
         justify-content: center;
         align-items: center;
     }
+>>>>>>> 7b48aaaba17e6fecfa5cac0fa49199b615713539
 }

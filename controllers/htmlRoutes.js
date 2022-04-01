@@ -6,13 +6,17 @@ const authorize = require('../utils/auth');
 // withAuth
 router.get('/',authorize,  async (req, res) => {
     try {
+        // {
+        //     include: [{model:Comment},{model:User},{model:Tag}]
+        // }
         const posts = await Post.findAll({
-            include: [{model:Comment},{model:User},{model:Tag}]
+            order:[['updatedAt','DESC']]
         });
         const tags = await Tag.findAll();
         const tag = tags.map(tag=>tag.get({plain:true}))
         const post = posts.map(post=>post.get({plain:true}));
         console.log(post)
+        
         res.render('home',{post,tag,userId:req.session.userId})
         // res.status(200).json(post)
     } catch (err) {
@@ -25,7 +29,8 @@ router.get('/',authorize,  async (req, res) => {
 router.get('/posts/:id', authorize, async (req, res) => {
     try {
         const posts = await Post.findByPk(req.params.id,{
-            include: [{model:Comment,include:[{model:User}]},{model:User},{model:Tag}]
+            include: [{model:Comment,include:[{model:User}]},{model:User},{model:Tag}],
+            order:[['updatedAt','DESC']]
         });
         const post = posts.get({plain:true});
         post.comments.forEach((comment)=>{
@@ -48,7 +53,7 @@ router.get('/tag/:id',authorize,  async (req, res) => {
     try {
         const posts = await Post.findAll({
             include: [{model:Comment,include:[{model:User}]},{model:User},{model:Tag}],
-        
+            order:[['updatedAt','DESC']],
             where:{
                 tagId:req.params.id
             }
@@ -71,7 +76,7 @@ router.get('/user/:id',authorize,  async (req, res) => {
         const user = req.params.id || req.session.userId
         const posts = await Post.findAll({
             include: [{model:Comment,include:[{model:User}]},{model:User},{model:Tag}],
-        
+            order:[['updatedAt','DESC']],
             where:{
                 userId:user
             }
