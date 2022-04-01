@@ -1,8 +1,10 @@
-body{
-    height:100vh;
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+body{
+    height:100vh;
     background-color: rgb(37, 37, 37);
     background-image: url('../images/darkgb.jpeg');
     background-size:cover;
@@ -61,6 +63,7 @@ a{
     width: 300px;
     height: 220px;
     padding-bottom: 10px;
+    object-fit: cover;
 }
 .pic-desc{
     font-size: 18px;
@@ -112,7 +115,7 @@ a{
 
 .pictureInput{
     display:block;
-    width:500px;
+    width:550px;
     height:500px;
     background-image: url(/images/dropzone.png);
     background-size: cover;
@@ -123,7 +126,7 @@ a{
 }
 input[type="file"]{
     opacity: 0;
-    width:500px;
+    width:550px;
     height:500px;
     cursor: pointer;
 
@@ -132,6 +135,9 @@ input[type="file"]{
 .modal-dialog{
     max-width:600px;
 }
+/* .new-post-body{
+    padding:3rem;
+} */
 /* add new post btn */
 .newPostBtn{
     margin: 20px 50px 20px 50px;
@@ -153,11 +159,9 @@ input[type="file"]{
     width:250px;
 }
 
-<<<<<<< HEAD
 .light-blue{
     background-color: rgb(233, 236, 246);
 }
-=======
 /* logout */
 .logoutBtn{
     margin: 10px 20px 0px 0px;
@@ -172,7 +176,6 @@ input[type="file"]{
 }
 
 
->>>>>>> 7b48aaaba17e6fecfa5cac0fa49199b615713539
 
 
 
@@ -195,7 +198,6 @@ input[type="file"]{
         left: 20%;
         width: 60%;
     }
-<<<<<<< HEAD
     input[type="file"],.pictureInput{
         width:95%;
         max-width:500px;
@@ -207,7 +209,6 @@ input[type="file"]{
 }
 
 @media screen and (max-width:500px) {
-=======
     .navbar{
         display: flex;
         flex-direction: column;
@@ -231,5 +232,4 @@ input[type="file"]{
         justify-content: center;
         align-items: center;
     }
->>>>>>> 7b48aaaba17e6fecfa5cac0fa49199b615713539
 }
