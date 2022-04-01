@@ -36,11 +36,12 @@ const upload = multer({ storage: storage,  fileFilter: function (req, file, call
 // withAuth
 router.post('/', authorize,upload.single('picture'), async (req, res) => {
     try {
+        const tagid = req.body.tagId || null
         const newPost = await Post.create({
             title:req.body.title,
             description:req.body.description,
             // userId:1,
-            tagId:req.body.tagId,
+            tagId:tagid,
             userId: req.session.userId,
             picture:`/uploads/${req.file.filename}`
         });
@@ -90,9 +91,13 @@ router.delete('/:id', authorize, async (req, res) => {
       res.status(404).json({ message: 'Invalid post ID!' });
       return;
     }
-    fs.unlink(`./public${postPicture.picture}`,(err)=>{
-      err?console.log(err):console.log('Deleted');
-    })
+
+    // Prevents seed pictures from being deleted
+    if (!postPicture.picture.slice(0,18)==='/uploads/protected'){
+      fs.unlink(`./public${postPicture.picture}`,(err)=>{
+        err?console.log(err):console.log('Deleted');
+      })
+    }
     res.status(200).json('Post Deleted');
   } catch (err) {
     res.status(500).json(err);
