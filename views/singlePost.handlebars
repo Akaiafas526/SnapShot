@@ -47,7 +47,7 @@
 
     {{>deletePostModal}}
 
-        <div class="comment-box-single d-flex flex-column border">
+        <div id="comment-box" class="comment-box-single">
             {{#each post.comments as |comment|}}
             {{>comments}}
             {{/each}}

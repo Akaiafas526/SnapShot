@@ -37,9 +37,20 @@ margin: 30px;
 text-align: center;
 }
 
-.comment-box-single {
+#comment-box {
     margin-top: 20px;
     align-items: center;
+    border: 5px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comment {
+    width: 200px;
+    overflow-wrap: break-word;
+    /* text-align: center; */
+    margin: 0 !important;
 }
 
 .pic-title{
