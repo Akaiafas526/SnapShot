@@ -1,5 +1,4 @@
 const { Post } = require("../models");
-const image = require("../");
 
 const postData = [
   {

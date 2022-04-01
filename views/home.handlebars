@@ -1,9 +1,7 @@
-<div class="navbar d-flex text-white justify-content-around mt-2 flex-wrap">
-  <button type="button" class="newPostBtn bg-transparent btn-primary fs-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Add New Post
-  </button>
+<div class=" d-flex text-white justify-content-between mx-5 mt-2 flex-wrap">
+ <a href="/user/{{userId}}" class="text-white fs-2 ">My Profile</a>
   <div>
-    <h1 class="projectName mt-2">Project 2</h1>
+    <h1 class="projectName mt-2">SnapShot</h1>
   </div>
   <a class="text-decoration-none text-white fs-2 mt-2" href="#" id="logout">Logout</a>
 </div>
@@ -12,7 +10,10 @@
 
 
 <div class="tagAndProfile align-items-center d-flex justify-content-around">
-<a href="/user/{{userId}}" class="text-white fs-2 ">My Profile</a>
+   <button type="button" class="newPostBtn bg-transparent btn-primary fs-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Add New Post
+  </button>
+
   <select class="tags form-select tagDropdown" aria-label="Default select example" name="tags">
     <option disabled selected value>Filter by Hashtag</option>
     <option value="all" name="all">all</option>

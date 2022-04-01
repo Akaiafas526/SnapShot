@@ -6,10 +6,9 @@ const authorize = require('../utils/auth');
 // withAuth
 router.get('/',authorize,  async (req, res) => {
     try {
-        // {
-        //     include: [{model:Comment},{model:User},{model:Tag}]
-        // }
+        
         const posts = await Post.findAll({
+            include: [{model:Comment},{model:User},{model:Tag}],        
             order:[['updatedAt','DESC']]
         });
         const tags = await Tag.findAll();
