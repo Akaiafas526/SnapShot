@@ -36,7 +36,12 @@ const upload = multer({ storage: storage,  fileFilter: function (req, file, call
 // withAuth
 router.post('/', authorize,upload.single('picture'), async (req, res) => {
     try {
-      (req.body.tagId==='all'||!req.body.tagId)?tagid=null:tagid=req.body.tagId
+      console.log(req.body.tagId==='all'||!req.body.tagId)
+      if(req.body.tagId==='all'||!req.body.tagId){
+      tagid=null}
+      else
+      {tagid=req.body.tagId}
+        
         // const tagid = req.body.tagId || null
         const newPost = await Post.create({
             title:req.body.title,
