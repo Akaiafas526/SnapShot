@@ -6,13 +6,15 @@ const authorize = require('../utils/auth');
 // withAuth
 router.get('/',authorize,  async (req, res) => {
     try {
-        const posts = await Post.findAll({
-            include: [{model:Comment},{model:User},{model:Tag}]
-        });
+        // {
+        //     include: [{model:Comment},{model:User},{model:Tag}]
+        // }
+        const posts = await Post.findAll();
         const tags = await Tag.findAll();
         const tag = tags.map(tag=>tag.get({plain:true}))
         const post = posts.map(post=>post.get({plain:true}));
         console.log(post)
+        
         res.render('home',{post,tag,userId:req.session.userId})
         // res.status(200).json(post)
     } catch (err) {
