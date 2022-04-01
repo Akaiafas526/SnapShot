@@ -223,11 +223,11 @@ input[type="file"]{
 .navbar{
     margin-left: -10%;
 }
-.btn-primary {
+/* .btn-primary {
     background-color: transparent;
     border-color: transparent;
 
-}
+} */
 
 .single-post-button {
     margin: 10px 30px 10px 30px;
@@ -376,5 +376,10 @@ input[type="file"]{
     }
     .login-container p {
         font-size: 1.1rem;
+    }
+}
+@media screen and (max-height:800px) {
+    .pictureInput,input[type="file"]{ 
+        height:200px;   
     }
 }

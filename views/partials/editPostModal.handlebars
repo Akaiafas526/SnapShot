@@ -12,11 +12,12 @@
 
                         <div class="text-black post-container flex-column d-flex ">
                             <div class="align-items-center">
-                                <div>Edit Post</div>
+                                {{!-- <div>Edit Post</div> --}}
                                 <div>Title:</div>
-                                <input class="post-title" type="text" name="title">
+                                <input class="post-title form-control" type="text" name="title">
                                 <div>Decription</div>
-                                <input class="description-box" type="text" name="description">
+                                <textarea class="description-box form-control"  name="description" aria-label="With textarea"></textarea>
+                                {{!-- <input class="description-box" type="text" name="description"> --}}
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
                                         data-bs-dismiss="modal">Close</button>
