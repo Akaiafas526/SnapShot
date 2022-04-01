@@ -46,7 +46,7 @@ formEl.addEventListener('change',(e)=>{
         const image = URL.createObjectURL(file[0])
         inputEl.style = `background-image: url(${image})`
     }
-    else {
+    else if (file?.length===0){
         inputEl.style = `background-image: url(/images/dropzone.png)`
 
     }

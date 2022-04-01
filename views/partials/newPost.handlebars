@@ -11,7 +11,7 @@
           <div class="">
             <div class=" d-flex flex-column align-items-center">
               {{!-- <div class="text-black titleTextModal">Title:</div> --}}
-              <input class="post-title titleBoxModal my-2" type="text" name="title" placeholder="Title">
+              <input class="post-title titleBoxModal my-2 form-control light-blue" type="text" name="title" placeholder="Title">
               <label class="pictureInput" for="picture">
                 <input type="file" name="picture" class="upload" />
               </label>
@@ -21,17 +21,17 @@
               
               <div class="input-group">
   {{!-- <span class="input-group-text">With textarea</span> --}}
-  <textarea class="form-control descBoxModal my-2" aria-label="With textarea" name="description" placeholder="Description"></textarea>
+  <textarea class="form-control descBoxModal my-2 light-blue" aria-label="With textarea" name="description" placeholder="Description"></textarea>
 </div>
 
 
               <label for="tags" class="tagTextModal text-black">#</label>
-              <select class="tags form-select"  aria-label="Default select example" name="tags">
-                <option disabled selected value>---select---</option>
-                <option value="all" name="all">all</option>
+              <select class="tags form-select light-blue"  aria-label="Default select example" name="tags">
+                <option disabled selected>---  Select Hashtag For Post  ---</option>
+                <option value="all" name="all">No Hashtag</option>
                 {{#each tag}}
 
-                <option value={{id}}>{{name}}</option>
+                <option value={{id}}>#{{name}}</option>
                 {{/each}}
               </select>
             </div>

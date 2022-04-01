@@ -13,13 +13,13 @@
 {{>newPost}}
 
 
-<div>
-  <select class="tags tagDropdown" name="tags">
-    <option disabled selected value>---select---</option>
+<div class="container">
+  <select class="tags form-select tagDropdown "  aria-label="Default select example" name="tags">
+    <option disabled selected value>Filter by Hashtag</option>
     <option value="all" name="all">all</option>
     {{#each tag}}
 
-    <option value={{id}}>{{name}}</option>
+    <option value={{id}}>#{{name}}</option>
     {{/each}}
   </select>
 </div>
