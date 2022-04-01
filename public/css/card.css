@@ -162,6 +162,12 @@ input[type="file"]{
 /* add new post btn */
 .newPostBtn{
     margin: 20px 50px 20px 50px;
+    background-color: darkcyan;
+    color:white;
+    transition:all 0.2s ease-in-out;
+}
+.newPostBtn:hover{
+    transform:scale(1.05)
 }
 /* back button */
 .backBtn{
@@ -190,11 +196,11 @@ input[type="file"]{
 .navbar{
     margin-left: -10%;
 }
-.btn-primary {
+/* .btn-primary {
     background-color: transparent;
     border-color: transparent;
 
-}
+} */
 
 .single-post-button {
     background-color: transparent;
