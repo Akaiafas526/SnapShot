@@ -42,6 +42,10 @@ text-align: center;
     width:500px;
 }
 
+.card-image-single{
+    width: 500px;
+}
+
 .post-buttons {
     display: flex;
     justify-content: center;
@@ -200,15 +204,21 @@ input[type="file"]{
 .navbar{
     margin-left: -10%;
 }
-/* .btn-primary {
+.btn-primary {
     background-color: transparent;
     border-color: transparent;
 
-} */
+}
 
 .single-post-button {
-    background-color: transparent;
-    border: none;
+    margin: 10px 30px 10px 30px;
+    background-color: darkcyan;
+    color:white;
+    transition:all 0.2s ease-in-out;
+}
+
+.single-post-button:hover{
+    transform:scale(1.05)
 }
 
 .projectName{
@@ -263,12 +273,14 @@ input[type="file"]{
         align-items: center;
         left: 5%;
     }
-    .card-box{
-        /* display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center; */
+    .card-box-single{
+       width: 90vw;
     }
+
+    .card-image-single{
+    width: 90vw;
+    }
+
     .tagAndProfile{
         display: flex;
         flex-direction: column;
@@ -276,8 +288,7 @@ input[type="file"]{
     }
     .singlePostNav{
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        flex-direction:row;
+        justify-content: space-between;
     }
 }
