@@ -1,11 +1,17 @@
 <div class="singlePostNav d-flex text-white justify-content-between">
+<div>
 <input type="button" onclick="location.href='/';" value="Home" class="bg-transparent btn-primary fs-2 mt-2 mr-4 p-2" />
 
 <input type="button" onclick="location.href='/user/{{userId}}';" value="My Profile" class="bg-transparent btn-primary fs-2 m-2 p-2" />
+    
+</div>
+<div>
+
+<input type="button" onclick="location.href='/user/{{userId}}';" value="Logout" class="logoutBtn bg-transparent btn-primary fs-2 mt-2 mr-4 p-2" />
+</div>
 
 {{!-- <a href="/user/{{userId}}" class="text-white fs-2 mt-3">My Profile</a> --}}
     
-<input type="button" onclick="location.href='/user/{{userId}}';" value="Logout" class="logoutBtn bg-transparent btn-primary fs-2 mt-2 mr-4 p-2" />
     
 {{!-- <a href="#" class="px-4 text-decoration-none text-white fs-1 logoutBtn" >Logout</a> --}}
 
@@ -54,11 +60,13 @@
 </div>
     {{>deletePostModal}}
 
+        {{#if post.comments}}
         <div id="comment-box" class="comment-box-single">
             {{#each post.comments as |comment|}}
             {{>comments}}
             {{/each}}
         </div>
+        {{/if}}
             {{>editCommentModal}}
             {{>deleteCommentModal}}
             
