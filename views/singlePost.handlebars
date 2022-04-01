@@ -18,7 +18,7 @@
 
         <div class="card-container d-flex justify-content-center">
             <div class="card-box-single d-flex justify-content-center">
-                <img class="card-image" src="..{{post.picture}}" alt="pic">
+                <img class="card-image-single" src="..{{post.picture}}" alt="pic">
                 
             </div>
         </div>
@@ -26,7 +26,7 @@
 
     <div class="pic-desc text-white">{{post.description}}</div>
 
-    <div>
+    <div class="post-buttons">
         <!-- COMMENT Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#commentModal">
             Add New Comment
@@ -51,10 +51,10 @@
         </button>
 {{/if}}
         
-
+</div>
     {{>deletePostModal}}
 
-        <div class="comment-box-single d-flex flex-column border">
+        <div id="comment-box" class="comment-box-single">
             {{#each post.comments as |comment|}}
             {{>comments}}
             {{/each}}
@@ -65,7 +65,7 @@
 
 
 
-    </div>
+    
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

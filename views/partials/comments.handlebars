@@ -1,9 +1,7 @@
-<div>
-<div class="comments text-center" data-commentid = {{id}}>
-    <h4 class="text-white">{{user.username}}</h4>
-    <p class="text-white">{{text}}</p>
 
-</div>
+<div class="comment text-center" data-commentid = {{id}}>
+    <h4 class="text-white">{{user.username}}</h4>
+    <p class="comment-text text-white">{{text}}</p>
 
 {{#if isOwner.valid}}
     <!-- Edit Comment Button trigger modal -->
