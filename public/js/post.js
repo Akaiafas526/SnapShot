@@ -67,7 +67,7 @@ formEl.addEventListener('submit',async (e)=>{
     }
 })
 
-tagEl[1].addEventListener('change',(e)=>{
+tagEl[0].addEventListener('change',(e)=>{
     e.preventDefault()
     
     if (e.target.value==='all'){

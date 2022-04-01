@@ -185,7 +185,7 @@ input[type="file"]{
 }
 /* logout */
 .logoutBtn{
-    margin: 10px 20px 0px 0px;
+    /* margin: 10px 20px 0px 0px; */
 }
 .navbar{
     margin-left: -10%;
@@ -238,14 +238,15 @@ input[type="file"]{
         left: 5%;
     }
     .card-box{
-        display: flex;
+        /* display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: center; */
     }
     .tagAndProfile{
         display: flex;
         flex-direction: column;
+        margin-top:5rem;
     }
     .singlePostNav{
         display: flex;

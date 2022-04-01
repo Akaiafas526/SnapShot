@@ -1,12 +1,17 @@
-<div class=" d-flex text-white justify-content-between mx-5 mt-2 flex-wrap">
- <a href="/user/{{userId}}" class="text-white fs-2 ">My Profile</a>
+<div class=" d-flex text-white justify-content-between align-items-center mx-5 my-5 flex-wrap">
   <div>
-    <h1 class="projectName mt-2">SnapShot</h1>
+
+ <a href="/user/{{userId}}" class="text-white fs-2 ">My Profile</a>
   </div>
-  <a class="text-decoration-none text-white fs-2 mt-2" href="#" id="logout">Logout</a>
+  <div>
+    <h1 class="projectName my-0 display-2">SnapShot</h1>
+  </div>
+  <div>
+
+  <a class="text-decoration-none text-white fs-2 " href="#" id="logout">Logout</a>
+  </div>
 </div>
 
-{{>newPost}}
 
 
 <div class="tagAndProfile align-items-center d-flex justify-content-around">
@@ -29,6 +34,8 @@
   {{/each}}
 
 </div>
+{{!-- Modal for new post --}}
+{{>newPost}}
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
