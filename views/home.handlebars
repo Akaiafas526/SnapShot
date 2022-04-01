@@ -1,21 +1,20 @@
-<a href="/user/{{userId}}">MyStuff</a>
-<div class="d-flex text-white justify-content-between ">
-  <!-- Button trigger modal -->
-  <button type="button" class="newPostBtn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<div class="navbar d-flex text-white justify-content-around mt-2 flex-wrap">
+  <button type="button" class="newPostBtn bg-transparent btn-primary fs-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Add New Post
   </button>
-  <h1 class=" p-3 mb-2 ">Project 2</h1>
-  <nav class=" d-flex flex-row align-items-center p-4">
-    <a class="px-4 text-decoration-none text-white fs-2 " href="#" id="logout">Logout</a>
-  </nav>
+  <div>
+    <h1 class="projectName mt-2">Project 2</h1>
+  </div>
+  <a class="text-decoration-none text-white fs-2 mt-2" href="#" id="logout">Logout</a>
 </div>
 
 {{>newPost}}
 
 
-<div>
+<div class="tagAndProfile align-items-center d-flex justify-content-around">
+<a href="/user/{{userId}}" class="text-white fs-2 ">My Profile</a>
   <select class="tags tagDropdown" name="tags">
-    <option disabled selected value>---select---</option>
+    <option disabled selected value>---Tags---</option>
     <option value="all" name="all">all</option>
     {{#each tag}}
 
@@ -23,9 +22,9 @@
     {{/each}}
   </select>
 </div>
-<div class="container d-flex flex-wrap">
+<div class="container d-flex flex-wrap justify-content-center">
   {{#each post}}
-    {{>posts}}
+  {{>posts}}
   {{/each}}
 
 </div>
