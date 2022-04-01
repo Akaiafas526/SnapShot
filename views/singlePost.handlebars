@@ -1,7 +1,14 @@
 <div class="singlePostNav d-flex text-white justify-content-between">
-<input type="button" onclick="location.href='/';" value="Go to Homepage" class="backBtn" />
-<a href="/user/{{userId}}" class="text-white fs-2 mt-3">My Profile</a>
-<a href="#" class="px-4 text-decoration-none text-white fs-1 logoutBtn" >Logout</a>
+<input type="button" onclick="location.href='/';" value="Home" class="bg-transparent btn-primary fs-2 mt-2 mr-4 p-2" />
+
+<input type="button" onclick="location.href='/user/{{userId}}';" value="My Profile" class="bg-transparent btn-primary fs-2 m-2 p-2" />
+
+{{!-- <a href="/user/{{userId}}" class="text-white fs-2 mt-3">My Profile</a> --}}
+    
+<input type="button" onclick="location.href='/user/{{userId}}';" value="Logout" class="logoutBtn bg-transparent btn-primary fs-2 mt-2 mr-4 p-2" />
+    
+{{!-- <a href="#" class="px-4 text-decoration-none text-white fs-1 logoutBtn" >Logout</a> --}}
+
 </div>
 
 <div class="d-flex flex-column align-items-center justify-content-center post" data-postId="{{post.id}}">
