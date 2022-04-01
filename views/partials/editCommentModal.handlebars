@@ -1,5 +1,5 @@
  <!-- Edit Comment Modal -->
-    {{!-- <form class="edit-comment-form"> --}}
+    <form class="edit-comment-form">
     <div class="modal fade" id="editCommentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -8,11 +8,11 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <input type="text">
+                    <input type="text" id="edit-comment-text">
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel
                         </button>
-                        <button  class="btn btn-primary editComment">Edit</button>
+                        <button type="submit" class="btn btn-primary editComment">Edit</button>
 
                     </div>
                 </div>
@@ -20,4 +20,4 @@
         </div>
     </div>
 
-{{!-- </form> --}}
+</form>
