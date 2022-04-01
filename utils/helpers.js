@@ -1,5 +1,14 @@
 module.exports = {
   format_date: (date) => {
-    return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+    console.log(date,'DATE   ASDASD ASDADS')
+    let hour = date.getHours()+1;
+    let timeOfDay;
+    if(hour>12){
+      hour-=12
+      timeOfDay = 'PM'
+    } else {
+      timeOfDay = 'AM'
+    }
+    return `${hour}:${date.getMinutes()}${timeOfDay} - ${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
   },
 };

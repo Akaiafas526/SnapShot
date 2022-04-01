@@ -1,8 +1,10 @@
-body{
-    height:100vh;
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+body{
+    height:100vh;
     background-color: rgb(37, 37, 37);
     background-image: url('../images/darkgb.jpeg');
     background-size:cover;
@@ -72,6 +74,7 @@ a{
     width: 300px;
     height: 220px;
     padding-bottom: 10px;
+    object-fit: cover;
 }
 .pic-desc{
     font-size: 18px;
@@ -123,7 +126,7 @@ a{
 
 .pictureInput{
     display:block;
-    width:500px;
+    width:550px;
     height:500px;
     background-image: url(/images/dropzone.png);
     background-size: cover;
@@ -134,7 +137,7 @@ a{
 }
 input[type="file"]{
     opacity: 0;
-    width:500px;
+    width:550px;
     height:500px;
     cursor: pointer;
 
@@ -143,6 +146,9 @@ input[type="file"]{
 .modal-dialog{
     max-width:600px;
 }
+/* .new-post-body{
+    padding:3rem;
+} */
 /* add new post btn */
 .newPostBtn{
     margin: 20px 50px 20px 50px;
@@ -203,6 +209,17 @@ input[type="file"]{
         left: 20%;
         width: 60%;
     }
+    input[type="file"],.pictureInput{
+        width:95%;
+        max-width:500px;
+        height:400px;
+    }
+    .pictureInput{
+        background-image: url(/images/dropzone-small.png);
+    }
+}
+
+@media screen and (max-width:500px) {
     .navbar{
         display: flex;
         flex-direction: column;
