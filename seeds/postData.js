@@ -32,7 +32,7 @@ const postData = [
   },
   {
     title: "Skiing in the Swiss Alpes",
-    description: "Breathtaking experience skiing on these beautiful mountain!",
+    description: "Breathtaking experience skiing on these beautiful mountains!",
     picture: "/uploads/protectedalpes_pic.jpg",
     userId: 4,
     tagId: 5,
@@ -60,7 +60,7 @@ const postData = [
   },
   {
     title: "YUM",
-    description: "Grilled on the charcoal to perfection..",
+    description: "Grilled on the charcoal to perfection!",
     picture: "/uploads/protectedkebab_pic.jpg",
     userId: 8,
     tagId: 2,
