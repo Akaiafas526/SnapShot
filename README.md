@@ -11,7 +11,7 @@ SnapShot is a social media platform that allows you to share pictures with the c
 
 [Media](#media)
 
-[Installation](#installation)git status
+[Installation](#installation)
 
 [Usage](#usage)
 
