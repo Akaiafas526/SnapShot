@@ -38,7 +38,11 @@ Install the dependencies with npm install and run the server with npm start.  To
 This product is licensed under MIT
 
 ## Contributors
-No contributions at this time
+Brian Halpin:
+
+Nick Broglio:
+
+Andreas Kaiafas: https://github.com/Akaiafas526
 
 ## Questions
 If you have any questions about the repo, open an issue or contact me directly at <brian.t.halpin@gmail.com>. You can find more
