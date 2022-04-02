@@ -323,11 +323,18 @@ input[type="file"]{
 }
 
 @media screen and (max-width:524px) {
-    .navigation>div{
+    .user-page{
         margin-bottom:1.6rem;
     }
     .navigation{
-        margin:2rem 0 2rem 0 !important;
+        /* margin:0 !important; */
+        padding-bottom:0.8rem !important;
+        margin:1rem 0 3rem 0 !important;
+        border-bottom:1px solid white;
+
+    }
+    .navigation p {
+        font-size: 2rem;;
     }
     .profile-container{
         order:10;
@@ -355,6 +362,10 @@ input[type="file"]{
     }
     .singlePostNav{
         display:block !important;
+    }
+    .singlePostNav,.profile{
+        margin-right:0 !important;
+        margin-bottom:1rem !important;
     }
     .navbar{
         display: flex;
