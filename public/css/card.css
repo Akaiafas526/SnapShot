@@ -264,6 +264,8 @@ input[type="file"]{
 }
 .projectName{
     order:1;
+    margin-bottom:0.4rem !important;
+    font-size: 3rem;;
     /* transition:all 0.2s ease-in-out; */
 
 }
