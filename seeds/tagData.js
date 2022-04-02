@@ -1,47 +1,36 @@
-const { Tag } = require('../models');
+const { Tag } = require("../models");
 
 const tagData = [
   {
-    name: 'Australia',
-   
+    name: "Australia",
   },
   {
-    name: 'foodlover',
-   
+    name: "foodlover",
   },
   {
-    name: 'art',
-   
+    name: "art",
   },
   {
-    name: 'nature',
-   
+    name: "nature",
   },
   {
-    name: 'travel',
-   
+    name: "travel",
   },
   {
-    name: 'adventure',
-   
+    name: "adventure",
   },
   {
-    name: 'motivation',
-   
+    name: "motivation",
   },
   {
-    name: 'repost',
-   
+    name: "repost",
   },
   {
-    name: 'picoftheday',
-   
+    name: "picoftheday",
   },
   {
-    name: 'family',
-   
+    name: "family",
   },
-  
 ];
 
 const seedTags = () => Tag.bulkCreate(tagData);

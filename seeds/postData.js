@@ -53,28 +53,22 @@ const postData = [
   },
   {
     title: "DOGGO",
-    description:
-      "Handsome man with his shades on.",
-    picture:
-      "/uploads/protecteddog_pic.jpg",
+    description: "Handsome man with his shades on.",
+    picture: "/uploads/protecteddog_pic.jpg",
     userId: 7,
     tagId: 9,
   },
   {
     title: "YUM",
-    description:
-      "Grilled on the charcoal to perfection..",
-    picture:
-      "/uploads/protectedkebab_pic.jpg",
+    description: "Grilled on the charcoal to perfection..",
+    picture: "/uploads/protectedkebab_pic.jpg",
     userId: 8,
     tagId: 2,
   },
   {
     title: "World Trade Center",
-    description:
-      "Favorite NYC architecture",
-    picture:
-      "/uploads/protectedarchitecture_pic.jpg",
+    description: "Favorite NYC architecture",
+    picture: "/uploads/protectedarchitecture_pic.jpg",
     userId: 9,
     tagId: 3,
   },
