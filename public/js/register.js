@@ -10,9 +10,9 @@ const registerFormHandler = async function(event){
     const response = await fetch('/api/user', {
         method: 'POST', 
         body: JSON.stringify({
-            username: usernameEl.value,
-            email: emailEl.value,
-            password: passwordEl.value,
+            username: usernameEl.value.trim(),
+            email: emailEl.value.trim(),
+            password: passwordEl.value.trim(),
         }),
         headers: { 'Content-Type': 'application/json'},
     });

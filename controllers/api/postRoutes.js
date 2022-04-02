@@ -40,17 +40,28 @@ const upload = multer({
 // withAuth
 router.post("/", authorize, upload.single("picture"), async (req, res) => {
   try {
-    console.log(req.body.tagId === "all" || !req.body.tagId);
+    console.log(req.body)
+    let newTitle = req.body.title;
+    let newDescription = req.body.description;
+    const emptyTitle = req.body.title.replace(/\s+/g, '');
+    const emptyDescription = req.body.description.replace(/\s+/g, '')
+    if (!emptyTitle){
+      newTitle = 'Utitled'
+    }
+    if (!emptyDescription){
+      newDescription = 'No description'
+    }
+    console.log(newTitle,newDescription,'hello')
     if (req.body.tagId === "all" || !req.body.tagId) {
       tagid = null;
     } else {
       tagid = req.body.tagId;
     }
-
+    console.log(req.body)
     // const tagid = req.body.tagId || null
     const newPost = await Post.create({
-      title: req.body.title,
-      description: req.body.description,
+      title: newTitle,
+      description: newDescription,
       // userId:1,
       tagId: tagid,
       userId: req.session.userId,
@@ -66,7 +77,16 @@ router.post("/", authorize, upload.single("picture"), async (req, res) => {
 // withAuth
 router.put("/:id", authorize, async (req, res) => {
   try {
-    const [affectedRows] = await Post.update(req.body, {
+    let body = {}
+    const emptyTitle = req.body.title.replace(/\s+/g, '');
+    const emptyDescription = req.body.description.replace(/\s+/g, '')
+    if (req.body.title&&emptyTitle){
+      body.title = req.body.title
+    }
+    if (req.body.description&&emptyDescription){
+      body.description = req.body.description
+    }
+    const [affectedRows] = await Post.update(body, {
       where: {
         id: req.params.id,
         // userId:1
