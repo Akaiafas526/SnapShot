@@ -1,9 +1,15 @@
-<div class="d-flex justify-content-between flex-column">
-    <div class="text-white d-flex justify-content-between ">
-        <input type="button" onclick="location.href='/';" value="Home" class="newPostBtn bg-transparent btn-primary fs-2" />
-        <h2 class="username-top mt-4">{{post.0.user.username}}</h2>
-        <a class="px-4 text-decoration-none text-white fs-2 " href="#" id="logout">Logout</a>
-    </div>
+<div class="navigation d-flex text-white justify-content-between align-items-center mx-5 my-5 flex-wrap">
+  <div class="profile-container">
+
+ <a href="/" class="text-white fs-2"><p>Home</p></a>
+  </div>
+  <div class="projectName-container">
+    <h2 class="username-top mt-4">{{post.0.user.username}}</h2>
+  </div>
+  <div class="logout-container">
+
+  <a class="text-decoration-none text-white fs-2 " href="#" id="logout"><p>Logout</p></a>
+  </div>
 </div>
 
 

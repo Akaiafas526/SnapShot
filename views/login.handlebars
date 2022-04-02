@@ -1,19 +1,19 @@
  <form id="login-form">
-        <div class="container">
-            <div class="row">
+        {{!-- <div class="container"> --}}
+            <div class="login-page">
                 <div class="login-container col-sm-3">
                     <h2 class="sign-in text-center">Sign In</h2>
                     <label for="username">Username</label>
-                    <input id="username-input-login" class="input" type="text" placeholder="Enter Username" name="username" required>
+                    <input id="username-input-login" class="input form-control fs-4" type="text" placeholder="Enter Username" name="username" required>
                     <label for="password">Password</label>
-                    <input id="password-input-login" class="input" type="text" placeholder="Enter Password" name="password" required>
-                    <button class="login-btn text-center"  >Login</button>
+                    <input id="password-input-login" class="input form-control fs-4" type="text" placeholder="Enter Password" name="password" required>
+                    <button class="login-btn text-center btn px-4 fs-4"  >Login</button>
                     {{!-- data-bs-toggle="modal" data-bs-target="#loginModal" --}}
                     <hr>
-                    <p>Don't have an account? Register <a href="/register">Here</a></p>
+                    <p>Don't have an account? </p><p>Register <a href="/register">Here</a></p>
                 </div>
             </div>
-        </div>
+        {{!-- </div> --}}
     </form>
 
 
