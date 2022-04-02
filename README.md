@@ -10,7 +10,7 @@ A brand new social app where you can unlock a new world of networking through po
 
 [Media](#media)
 
-[Installation](#installation)
+[Installation](#installation)git status
 
 [Usage](#usage)
 
