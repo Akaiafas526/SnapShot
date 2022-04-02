@@ -2,7 +2,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-A social app where you can post your favorite pics, see your friends pics, and leave comments
+A brand new social app where you can unlock a new world of networking through posting pictures that represent who you are and what you stand for. Users can browse other members posts and even view a webpage personalized just for them! Bet you can't wait to sign up!
 
 ## Table of Contents
 
