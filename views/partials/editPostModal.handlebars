@@ -1,33 +1,51 @@
 <!-- EDIT Modal -->
-        <form class="edit-post-form">
-        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="editModalLabel">Edit Post</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                       <input type="hidden" name="postId" value="{{post.id}}">
-                    <div class="modal-body">
-
-                        <div class="text-black post-container flex-column d-flex ">
-                            <div class="align-items-center">
-                                {{!-- <div>Edit Post</div> --}}
-                                <div>Title:</div>
-                                <input class="post-title form-control" type="text" name="title">
-                                <div>Decription</div>
-                                <textarea class="description-box form-control"  name="description" aria-label="With textarea"></textarea>
-                                {{!-- <input class="description-box" type="text" name="description"> --}}
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button>
-                                    <button  class="btn btn-primary editModalBtn">Save changes</button>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<form class="edit-post-form">
+  <div
+    class="modal fade"
+    id="editModal"
+    tabindex="-1"
+    aria-labelledby="editModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Edit Post</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </div>
-        </form>
+        <input type="hidden" name="postId" value="{{post.id}}" />
+        <div class="modal-body">
+
+          <div class="text-black post-container flex-column d-flex">
+            <div class="align-items-center">
+              {{! <div>Edit Post</div> }}
+              <div>Title:</div>
+              <input class="post-title form-control" type="text" name="title" />
+              <div>Decription</div>
+              <textarea
+                class="description-box form-control"
+                name="description"
+                aria-label="With textarea"
+              ></textarea>
+              {{! <input class="description-box" type="text" name="description"> }}
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >Close</button>
+                <button class="btn btn-primary editModalBtn">Save changes</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

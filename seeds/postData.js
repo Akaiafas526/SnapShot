@@ -32,7 +32,7 @@ const postData = [
   },
   {
     title: "Skiing in the Swiss Alpes",
-    description: "Breathtaking experience skiing on these beautiful mountain!",
+    description: "Breathtaking experience skiing on these beautiful mountains!",
     picture: "/uploads/protectedalpes_pic.jpg",
     userId: 4,
     tagId: 5,
@@ -53,28 +53,22 @@ const postData = [
   },
   {
     title: "DOGGO",
-    description:
-      "Handsome man with his shades on.",
-    picture:
-      "/uploads/protecteddog_pic.jpg",
+    description: "Handsome man with his shades on.",
+    picture: "/uploads/protecteddog_pic.jpg",
     userId: 7,
     tagId: 9,
   },
   {
     title: "YUM",
-    description:
-      "Grilled on the charcoal to perfection..",
-    picture:
-      "/uploads/protectedkebab_pic.jpg",
+    description: "Grilled on the charcoal to perfection!",
+    picture: "/uploads/protectedkebab_pic.jpg",
     userId: 8,
     tagId: 2,
   },
   {
     title: "World Trade Center",
-    description:
-      "Favorite NYC architecture",
-    picture:
-      "/uploads/protectedarchitecture_pic.jpg",
+    description: "Favorite NYC architecture",
+    picture: "/uploads/protectedarchitecture_pic.jpg",
     userId: 9,
     tagId: 3,
   },

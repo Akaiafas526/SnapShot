@@ -1,38 +1,39 @@
+<div class="comment text-center" data-commentid={{id}}>
+  <h4 class="text-white">{{user.username}}</h4>
+  <p class="comment-text text-white">{{text}}</p>
 
-<div class="comment text-center" data-commentid = {{id}}>
-    <h4 class="text-white">{{user.username}}</h4>
-    <p class="comment-text text-white">{{text}}</p>
-
-{{#if isOwner.valid}}
+  {{#if isOwner.valid}}
     <!-- Edit Comment Button trigger modal -->
-    <button type="button" class="btn btn-primary" id="editComment" data-bs-toggle="modal" data-bs-target="#editCommentModal" data-id={{id}}>
-        Edit Comment
+    <button
+      type="button"
+      class="btn btn-primary"
+      id="editComment"
+      data-bs-toggle="modal"
+      data-bs-target="#editCommentModal"
+      data-id={{id}}
+    >
+      Edit Comment
     </button>
-{{/if}}
-   
+  {{/if}}
 
-{{#if isOwner.valid}}
+  {{#if isOwner.valid}}
     <!-- Delete Comment Button trigger modal -->
 
-    {{!-- data-bs-toggle="modal" data-bs-target="#deleteCommentModal" --}}
-    <button type="button" class="btn btn-primary" id="deleteComment"  data-id={{id}}>
-        Delete Comment
+    {{! data-bs-toggle="modal" data-bs-target="#deleteCommentModal" }}
+    <button
+      type="button"
+      class="btn btn-primary"
+      id="deleteComment"
+      data-id={{id}}
+    >
+      Delete Comment
     </button>
-{{/if}}
+  {{/if}}
 
 </div>
-    
 
+{{! </form> }}
 
-{{!-- </form> --}}
-
-
-
-
-
-
-
-
-{{!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+{{! <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script> --}}
+    crossorigin="anonymous"></script> }}
