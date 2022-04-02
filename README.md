@@ -1,6 +1,8 @@
 # SnapShot
 
 ## Description
+A brand new social app where you can unlock a new world of networking through posting pictures that represent who you are and what you stand for. Users can browse other members posts and even view a webpage personalized just for them! Bet you can't wait to sign up!
+
 SnapShot is a social media platform that allows you to share pictures with the community.  View some photos, if you see something you like, leave a comment.  Made a mistake?  No problem, you can easily edit or delete your posts and comments. 
 
 ## Table of Contents
