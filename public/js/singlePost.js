@@ -67,6 +67,9 @@ async function editConfirmed(e){
   e.preventDefault()
   console.log(editCommentText.value)
   const newText =  editCommentText.value
+  if (newText.replace(/\s+/g, '')===''){
+    return
+  }
   const data = await fetch(`/api/comment/${commentid}`, {
     method: 'PUT',
     headers: { 'Content-type': 'application/json' },
@@ -107,7 +110,11 @@ eFormEl.addEventListener("submit", async (e) => {
   e.preventDefault();
   const title = document.querySelector('.post-title').value
   const description = document.querySelector('.description-box').value
-  
+
+  // Checks if only spaces were entered
+  if(title.replace(/\s+/g, '')===''&&description.replace(/\s+/g, '')===''){
+    return
+  }
   const id = post.getAttribute('data-postId')
   const response = await fetch(`/api/post/${id}`, {
     method: "PUT",
@@ -130,6 +137,9 @@ eFormEl.addEventListener("submit", async (e) => {
 
 cFormEl.addEventListener("submit", async (e) => {
   e.preventDefault();
+  if (e.target[2].value.replace(/\s+/g, '')===''){
+    return
+  }
   const response = await fetch("/api/comment", {
     method: "POST",
     body: JSON.stringify({
