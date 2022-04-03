@@ -9,6 +9,9 @@ const editCommentBtn =document.querySelectorAll('#editComment');
 const deleteCommentModalBtn =document.querySelector('.deleteCommentBtn');
 const editCommentModal =document.querySelector('.edit-comment-form');
 const editCommentText =document.querySelector('#edit-comment-text');
+const postTitle = document.querySelector('.single-post-title');
+const postDescription = document.querySelector('.single-post-text');
+
 console.log(deleteCommentModalBtn)
 let deleteModal = new bootstrap.Modal(document.getElementById('deleteCommentModal'), {});
 let editModal = new bootstrap.Modal(document.getElementById('editCommentModal'), {});
@@ -23,6 +26,13 @@ editCommentBtn.forEach(( btn) => {
 deleteCommentModalBtn.addEventListener('click',deleteConfirmed)
 editCommentModal.addEventListener('submit',editConfirmed)
 const postId = post.getAttribute('data-postId')
+
+const titleEl = document.querySelector('.post-title')
+const descriptionEl = document.querySelector('.description-box')
+titleEl.placeholder=postTitle.textContent
+descriptionEl.placeholder=postDescription.textContent;
+
+
 let commentid;
 
 async function deletePost()  {
@@ -83,6 +93,7 @@ function deleteComment(e){
 function editComment(e){
   e.preventDefault()
   e.stopPropagation()
+  editCommentText.placeholder = e.target.parentElement.children[1].textContent
   console.log(e,e.target.dataset.id)
   commentid = e.target.dataset.id
     editModal.show()
@@ -90,13 +101,13 @@ function editComment(e){
 }
 
 
-
+// single-post-title
 
 eFormEl.addEventListener("submit", async (e) => {
   e.preventDefault();
   const title = document.querySelector('.post-title').value
   const description = document.querySelector('.description-box').value
-
+  
   const id = post.getAttribute('data-postId')
   const response = await fetch(`/api/post/${id}`, {
     method: "PUT",
