@@ -23,7 +23,6 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // On delete??
     userId: {
       type: DataTypes.INTEGER,
       allowNull: false,

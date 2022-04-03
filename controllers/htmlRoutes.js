@@ -15,7 +15,7 @@ router.get("/", authorize, async (req, res) => {
     console.log(post);
 
     res.render("home", { post, tag, userId: req.session.userId });
-    // res.status(200).json(post)
+    
   } catch (err) {
     res.status(400).json(err);
   }
@@ -40,7 +40,6 @@ router.get("/posts/:id", authorize, async (req, res) => {
     const isOwner = { valid: req.session.userId === post.user.id };
     console.log("VALID ", isOwner);
     res.render("singlePost", { post, isOwner, userId: req.session.userId });
-    ////res.status(200).json(post)
   } catch (err) {
     res.status(400).json(err);
   }
@@ -66,7 +65,6 @@ router.get("/tag/:id", authorize, async (req, res) => {
     const tag = tags.map((tag) => tag.get({ plain: true }));
     console.log(post, tag);
     res.render("postByTag", { post, tag, userId: req.session.userId });
-    // res.status(200).json(post)
   } catch (err) {
     res.status(400).json(err);
   }
@@ -89,7 +87,6 @@ router.get("/user/:id", authorize, async (req, res) => {
     });
     const post = posts.map((post) => post.get({ plain: true }));
     res.render("userProfile", { post });
-    // res.status(200).json(post)
   } catch (err) {
     res.status(400).json(err);
   }

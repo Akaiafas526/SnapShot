@@ -24,7 +24,6 @@ router.put("/:id", authorize, async (req, res) => {
     const [affectedRows] = await Comment.update(req.body, {
       where: {
         id: req.params.id,
-        // userId:1
         userId: req.session.userId,
       },
     });
@@ -46,8 +45,7 @@ router.delete("/:id", authorize, async (req, res) => {
     const deletedComment = await Comment.destroy({
       where: {
         id: req.params.id,
-        // user_id:1
-        // user_id: req.session.user_id,
+        
       },
     });
 

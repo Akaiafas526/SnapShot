@@ -77,9 +77,7 @@ function deleteComment(e){
   e.stopPropagation()
   console.log(e,e.target.dataset.id)
   commentid = e.target.dataset.id
-  // console.log(commentid, e.target, e.currentTarget,this)
     deleteModal.show()
-    // deleteConfirmed(commentid)
     
 }
 function editComment(e){
@@ -87,51 +85,15 @@ function editComment(e){
   e.stopPropagation()
   console.log(e,e.target.dataset.id)
   commentid = e.target.dataset.id
-  // console.log(commentid, e.target, e.currentTarget,this)
     editModal.show()
-    // deleteConfirmed(commentid)
     
 }
 
 
 
-// editCommentBtn.addEventListener('click',(e)=>{
-//   e.preventDefault()
-//   const newText =  e.target.parentElement.parentElement.firstChild.nextElementSibling.value
-//   console.log(e.target,newText)
-//   //   const data = await fetch(`/api/comment/${commentid}`, {
-// //     method: 'PUT',
-// //     headers: { 'Content-type': 'application/json' },
-// //     body:JSON.stringify({text:newText})
-// // })
-// // if (data.ok){
-
-// //   document.location.assign(`/posts/${postId}`);
-// // } 
-// // else{
-// //   console.log('ERROR')
-// // }
-// })
-
-
-// ask at start of class
-// async function editPost() {
-//     const id = post.getAttribute('data-postId')
-//     const data = await fetch (`/api/posts/${id}`, {
-//         method:'PUT',
-//         headers: { 'Content-Type': 'application/json' },
-//     })
-//     if(data.ok){
-//         document.location.assign('singlePost');
-//     } else{
-//         console.log('ERROR')
-//     }
-// }
-// editBtn.addEventListener('click', editPost)
 
 eFormEl.addEventListener("submit", async (e) => {
   e.preventDefault();
-  // console.log(e.target)
   const title = document.querySelector('.post-title').value
   const description = document.querySelector('.description-box').value
 

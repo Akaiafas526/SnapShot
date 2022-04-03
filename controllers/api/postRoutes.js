@@ -58,11 +58,9 @@ router.post("/", authorize, upload.single("picture"), async (req, res) => {
       tagid = req.body.tagId;
     }
     console.log(req.body)
-    // const tagid = req.body.tagId || null
     const newPost = await Post.create({
       title: newTitle,
       description: newDescription,
-      // userId:1,
       tagId: tagid,
       userId: req.session.userId,
       picture: `/uploads/${req.file.filename}`,
@@ -89,7 +87,6 @@ router.put("/:id", authorize, async (req, res) => {
     const [affectedRows] = await Post.update(body, {
       where: {
         id: req.params.id,
-        // userId:1
         userId: req.session.userId,
       },
     });
@@ -110,8 +107,7 @@ router.delete("/:id", authorize, async (req, res) => {
     const deletedPost = await Post.destroy({
       where: {
         id: req.params.id,
-        // user_id:1
-        // user_id: req.session.user_id,
+        
       },
     });
 
