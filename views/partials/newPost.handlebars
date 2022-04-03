@@ -11,7 +11,7 @@
           <div class="">
             <div class=" d-flex flex-column align-items-center">
               {{!-- <div class="text-black titleTextModal">Title:</div> --}}
-              <input class="post-title titleBoxModal my-2 form-control light-blue" type="text" name="title" placeholder="Title" required>
+              <input class="post-title titleBoxModal my-2 form-control light-blue" type="text" name="title" placeholder="Title" maxlength="250" required>
               <label class="pictureInput" for="picture">
                 <input type="file" name="picture" class="upload" />
               </label>
@@ -21,7 +21,7 @@
               
               <div class="input-group">
   {{!-- <span class="input-group-text">With textarea</span> --}}
-  <textarea class="form-control descBoxModal my-2 light-blue" aria-label="With textarea" name="description" placeholder="Description" required></textarea>
+  <textarea class="form-control descBoxModal my-2 light-blue" aria-label="With textarea" name="description" placeholder="Description" maxlength="250" required></textarea>
 </div>
 
 
