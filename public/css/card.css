@@ -75,10 +75,20 @@ text-align: center;
     overflow-wrap: break-word;
     padding: 0 20px;
 }
+.single-post-title{
+    width:500px;
+    word-wrap: break-word;
+    margin:auto;
+}
 .single-post-text{
     width:500px;
+    word-wrap: break-word;
 }
 .pic-title{
+    max-width: 340px;
+    max-height: 60px;
+    overflow-wrap: break-word;
+    overflow-y:hidden ;
     font-size: 30px;
     padding: 10px 0 0 0;
     text-align: center;
@@ -100,6 +110,10 @@ a{
     object-fit: cover;
 }
 .pic-desc{
+    max-width: 340px;
+    height:55px;
+    overflow-wrap: break-word;
+    overflow-y:hidden ;
     font-size: 18px;
     padding-bottom: 10px;
 }
@@ -376,7 +390,13 @@ input[type="file"]{
         align-items: center;
         left: 5%;
     }
-
+  
+    .single-post-title{
+        width:90vw;
+    }
+    .single-post-text{
+        max-width:90vw;
+    }
     .card-image-single,.comment,.card-box-single{
     width: 100vw;
     }
@@ -425,9 +445,19 @@ input[type="file"]{
         border:none;
         width:100vw;
     }
+    .pic-title{
+        margin:auto;
+        max-width: 95vw;
+    }
+    .pic-desc{
+        margin:auto;
+        height:auto;
+        max-width: 92vw;
+    }
     .card-image{
         width:98vw;
     }
+    
     .login-container{
         width: 100vw;
         border:none;
