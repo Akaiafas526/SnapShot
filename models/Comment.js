@@ -17,7 +17,6 @@ Comment.init(
       references: {
         model: "user",
         key: "id",
-        //   CASCADE OR NULL?
         onDelete: "CASCADE",
       },
     },

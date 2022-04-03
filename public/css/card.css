@@ -56,13 +56,16 @@ text-align: center;
     margin-top: 20px;
     align-items: center;
     border: 5px solid white;
+    border-radius:0.3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.623);
+
 }
 
 .comment {
-    width: 400px;
+    width: 490px;
     text-align: center;
     border-bottom: 2px solid white;
     margin-top: 20px;
@@ -72,8 +75,20 @@ text-align: center;
     overflow-wrap: break-word;
     padding: 0 20px;
 }
-
+.single-post-title{
+    width:500px;
+    word-wrap: break-word;
+    margin:auto;
+}
+.single-post-text{
+    width:500px;
+    word-wrap: break-word;
+}
 .pic-title{
+    max-width: 340px;
+    max-height: 60px;
+    overflow-wrap: break-word;
+    overflow-y:hidden ;
     font-size: 30px;
     padding: 10px 0 0 0;
     text-align: center;
@@ -95,13 +110,22 @@ a{
     object-fit: cover;
 }
 .pic-desc{
+    max-width: 340px;
+    height:55px;
+    overflow-wrap: break-word;
+    overflow-y:hidden ;
     font-size: 18px;
     padding-bottom: 10px;
 }
 .username-top{
     font-size: 30px;
 }
-
+.username{
+    color:darkcyan;
+}
+.username:hover{
+    color:rgb(16, 192, 192);
+}
 /* create new post */
 
 
@@ -228,20 +252,34 @@ input[type="file"]{
     border-color: transparent;
 
 } */
-
+.singlePostNav .profile{
+    margin-right:3rem;
+ }
 .single-post-button {
-    margin: 10px 30px 10px 30px;
+    margin: 2rem 2.1rem 1rem 2.1rem;
     background-color: darkcyan;
-    color:white;
+    color:rgb(228, 228, 228);
     transition:transform 0.2s ease-in-out;
 }
 
 .single-post-button:hover{
-    transform:scale(1.05)
+    transform:scale(1.05);
+    color:white;
 }
-
+.commentBtn{
+    margin: 0.5rem 0.2rem;
+    background-color: darkcyan;
+    color:rgb(228, 228, 228);
+    transition:transform 0.2s ease-in-out;
+}
+.commentBtn:hover{
+    transform:scale(1.05);
+    color:white;
+}
 .projectName{
     order:1;
+    margin-bottom:0.4rem !important;
+    font-size: 3rem;;
     /* transition:all 0.2s ease-in-out; */
 
 }
@@ -301,8 +339,18 @@ input[type="file"]{
 }
 
 @media screen and (max-width:524px) {
-    .navigation>div{
+    .user-page{
         margin-bottom:1.6rem;
+    }
+    .navigation{
+        /* margin:0 !important; */
+        padding-bottom:0.8rem !important;
+        margin:1rem 0 3rem 0 !important;
+        border-bottom:1px solid white;
+
+    }
+    .navigation p {
+        font-size: 2rem;;
     }
     .profile-container{
         order:10;
@@ -316,12 +364,24 @@ input[type="file"]{
         width: 100vw;
 
     }
-    .projectName-container{
+    .projectName-container,.home-container{
         width:100vw;
         text-align: center;
     }
+    .home-container p{
+        width:100vw;
+        text-align: center;
+
+    }
     .login-container{
         width:98vw;
+    }
+    .singlePostNav{
+        display:block !important;
+    }
+    .singlePostNav,.profile{
+        margin-right:0 !important;
+        margin-bottom:1rem !important;
     }
     .navbar{
         display: flex;
@@ -330,14 +390,24 @@ input[type="file"]{
         align-items: center;
         left: 5%;
     }
-    .card-box-single{
-       width: 90vw;
+  
+    .single-post-title{
+        width:90vw;
     }
-
-    .card-image-single{
-    width: 90vw;
+    .single-post-text{
+        max-width:90vw;
     }
-
+    .card-image-single,.comment,.card-box-single{
+    width: 100vw;
+    }
+    #comment-box{
+        border-left:none;
+        border-right:none;
+        width:100vw;
+    }
+    .single-post-button{
+        margin:2rem 1rem 1rem 1rem;
+    }
     .tagAndProfile{
         display: flex;
         flex-direction: column;
@@ -346,13 +416,25 @@ input[type="file"]{
     .newPostBtn{
         margin-top:0;
     }
-    .singlePostNav{
-        display: flex;
-        flex-direction:row;
-        justify-content: space-between;
-    }
+    
     .input{
         width:80%;
+    }
+    .post>div{
+        width:100vw;
+    }
+    #commentModal,#editCommentModal,#deleteCommentModal,#editModal,#deleteModal{
+        padding:0 !important;
+        margin:0 !important;
+        width:100vw;
+    }
+    body{
+        /* width: 100vw; */
+        padding-right:0 !important;
+        /* margin:0 !important; */
+    }
+    .modal{
+        position:fixed;
     }
 }
 
@@ -363,9 +445,19 @@ input[type="file"]{
         border:none;
         width:100vw;
     }
+    .pic-title{
+        margin:auto;
+        max-width: 95vw;
+    }
+    .pic-desc{
+        margin:auto;
+        height:auto;
+        max-width: 92vw;
+    }
     .card-image{
         width:98vw;
     }
+    
     .login-container{
         width: 100vw;
         border:none;

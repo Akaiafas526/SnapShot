@@ -1,17 +1,17 @@
 <div class="navigation d-flex text-white justify-content-between align-items-center mx-5 my-5 flex-wrap">
-  <div class="profile-container">
+  <div class="profile-container user-page">
 
  <a href="/" class="text-white fs-2"><p>Home</p></a>
   </div>
-  <div class="projectName-container">
-    <h2 class="username-top mt-4">{{post.0.user.username}}</h2>
-  </div>
-  <div class="logout-container">
+  
+  <div class="logout-container user-page">
 
   <a class="text-decoration-none text-white fs-2 " href="#" id="logout"><p>Logout</p></a>
   </div>
 </div>
-
+<div class="projectName-container text-center text-white">
+    <h2 class="display-3 mt-4">{{post.0.user.username}}</h2>
+  </div>
 
 <div class="d-flex justify-content-center flex-wrap">
 

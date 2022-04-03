@@ -1,26 +1,26 @@
-<div class="singlePostNav d-flex text-white justify-content-between">
-<div>
-<input type="button" onclick="location.href='/';" value="Home" class="bg-transparent btn-primary fs-2 mt-2 mr-4 p-2" />
+<div class="navigation d-flex text-white justify-content-between align-items-center mx-5 my-5 flex-wrap">
+<div class="singlePostNav d-flex justify-content-between">
+    <div class="home-container">
 
-<input type="button" onclick="location.href='/user/{{userId}}';" value="My Profile" class="bg-transparent btn-primary fs-2 m-2 p-2" />
-    
+<a type="button" href='/' value="Home" class="text-white fs-2 profile"><p>Home</p></a>
+    </div>
+<div class="profile-container">
+
+ <a href="/user/{{userId}}" class="text-white fs-2 profile"><p>My Profile</p></a>
+  </div>
 </div>
-<div>
+<div class="logout-container">
 
-<input type="button" id="logout" value="Logout" class="logoutBtn bg-transparent btn-primary fs-2 mt-2 mr-4 p-2" />
-</div>
+  <a class="text-decoration-none text-white fs-2 " href="#" id="logout"><p>Logout</p></a>
+  </div>
 
-{{!-- <a href="/user/{{userId}}" class="text-white fs-2 mt-3">My Profile</a> --}}
-    
-    
-{{!-- <a href="#" class="px-4 text-decoration-none text-white fs-1 logoutBtn" >Logout</a> --}}
 
 </div>
 
-<div class="d-flex flex-column align-items-center justify-content-center post" data-postId="{{post.id}}">
+<div class="d-flex flex-column align-items-center justify-content-center post w-100" data-postId="{{post.id}}">
     <div class="text-white d-flex flex-column  justify-content-center">
-        <h2 class="pic-title">{{post.title}}</h2>
-        <div class="pic-username"><a href="/user/{{post.user.id}}">{{post.user.username}}</a></div>
+        <h2 class="display-3 text-center single-post-title">{{post.title}}</h2>
+        <div class="fs-3 text-center pb-3"><a href="/user/{{post.user.id}}" class="username">{{post.user.username}}</a></div>
 
         <div class="card-container d-flex justify-content-center">
             <div class="card-box-single d-flex justify-content-center">
@@ -30,7 +30,7 @@
         </div>
     </div>
 
-    <div class="pic-desc text-white">{{post.description}}</div>
+    <div class="pb-3 fs-4 text-white single-post-text text-center">{{post.description}}</div>
 
     <div class="post-buttons">
         <!-- COMMENT Button trigger modal -->

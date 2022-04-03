@@ -76,4 +76,3 @@ tagEl[0].addEventListener('change',(e)=>{
         window.location.assign(`/tag/${e.target.value}`)
     }
 })
-// getTags();

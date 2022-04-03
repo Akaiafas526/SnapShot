@@ -9,6 +9,9 @@ const editCommentBtn =document.querySelectorAll('#editComment');
 const deleteCommentModalBtn =document.querySelector('.deleteCommentBtn');
 const editCommentModal =document.querySelector('.edit-comment-form');
 const editCommentText =document.querySelector('#edit-comment-text');
+const postTitle = document.querySelector('.single-post-title');
+const postDescription = document.querySelector('.single-post-text');
+
 console.log(deleteCommentModalBtn)
 let deleteModal = new bootstrap.Modal(document.getElementById('deleteCommentModal'), {});
 let editModal = new bootstrap.Modal(document.getElementById('editCommentModal'), {});
@@ -23,6 +26,13 @@ editCommentBtn.forEach(( btn) => {
 deleteCommentModalBtn.addEventListener('click',deleteConfirmed)
 editCommentModal.addEventListener('submit',editConfirmed)
 const postId = post.getAttribute('data-postId')
+
+const titleEl = document.querySelector('.post-title')
+const descriptionEl = document.querySelector('.description-box')
+titleEl.placeholder=postTitle.textContent
+descriptionEl.placeholder=postDescription.textContent;
+
+
 let commentid;
 
 async function deletePost()  {
@@ -57,6 +67,9 @@ async function editConfirmed(e){
   e.preventDefault()
   console.log(editCommentText.value)
   const newText =  editCommentText.value
+  if (newText.replace(/\s+/g, '')===''){
+    return
+  }
   const data = await fetch(`/api/comment/${commentid}`, {
     method: 'PUT',
     headers: { 'Content-type': 'application/json' },
@@ -77,64 +90,31 @@ function deleteComment(e){
   e.stopPropagation()
   console.log(e,e.target.dataset.id)
   commentid = e.target.dataset.id
-  // console.log(commentid, e.target, e.currentTarget,this)
     deleteModal.show()
-    // deleteConfirmed(commentid)
     
 }
 function editComment(e){
   e.preventDefault()
   e.stopPropagation()
+  editCommentText.placeholder = e.target.parentElement.children[1].textContent
   console.log(e,e.target.dataset.id)
   commentid = e.target.dataset.id
-  // console.log(commentid, e.target, e.currentTarget,this)
     editModal.show()
-    // deleteConfirmed(commentid)
     
 }
 
 
-
-// editCommentBtn.addEventListener('click',(e)=>{
-//   e.preventDefault()
-//   const newText =  e.target.parentElement.parentElement.firstChild.nextElementSibling.value
-//   console.log(e.target,newText)
-//   //   const data = await fetch(`/api/comment/${commentid}`, {
-// //     method: 'PUT',
-// //     headers: { 'Content-type': 'application/json' },
-// //     body:JSON.stringify({text:newText})
-// // })
-// // if (data.ok){
-
-// //   document.location.assign(`/posts/${postId}`);
-// // } 
-// // else{
-// //   console.log('ERROR')
-// // }
-// })
-
-
-// ask at start of class
-// async function editPost() {
-//     const id = post.getAttribute('data-postId')
-//     const data = await fetch (`/api/posts/${id}`, {
-//         method:'PUT',
-//         headers: { 'Content-Type': 'application/json' },
-//     })
-//     if(data.ok){
-//         document.location.assign('singlePost');
-//     } else{
-//         console.log('ERROR')
-//     }
-// }
-// editBtn.addEventListener('click', editPost)
+// single-post-title
 
 eFormEl.addEventListener("submit", async (e) => {
   e.preventDefault();
-  // console.log(e.target)
   const title = document.querySelector('.post-title').value
   const description = document.querySelector('.description-box').value
 
+  // Checks if only spaces were entered
+  if(title.replace(/\s+/g, '')===''&&description.replace(/\s+/g, '')===''){
+    return
+  }
   const id = post.getAttribute('data-postId')
   const response = await fetch(`/api/post/${id}`, {
     method: "PUT",
@@ -157,6 +137,9 @@ eFormEl.addEventListener("submit", async (e) => {
 
 cFormEl.addEventListener("submit", async (e) => {
   e.preventDefault();
+  if (e.target[2].value.replace(/\s+/g, '')===''){
+    return
+  }
   const response = await fetch("/api/comment", {
     method: "POST",
     body: JSON.stringify({

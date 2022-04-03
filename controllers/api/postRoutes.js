@@ -40,18 +40,27 @@ const upload = multer({
 // withAuth
 router.post("/", authorize, upload.single("picture"), async (req, res) => {
   try {
-    console.log(req.body.tagId === "all" || !req.body.tagId);
+    console.log(req.body)
+    let newTitle = req.body.title;
+    let newDescription = req.body.description;
+    const emptyTitle = req.body.title.replace(/\s+/g, '');
+    const emptyDescription = req.body.description.replace(/\s+/g, '')
+    if (!emptyTitle){
+      newTitle = 'Utitled'
+    }
+    if (!emptyDescription){
+      newDescription = 'No description'
+    }
+    console.log(newTitle,newDescription,'hello')
     if (req.body.tagId === "all" || !req.body.tagId) {
       tagid = null;
     } else {
       tagid = req.body.tagId;
     }
-
-    // const tagid = req.body.tagId || null
+    console.log(req.body)
     const newPost = await Post.create({
-      title: req.body.title,
-      description: req.body.description,
-      // userId:1,
+      title: newTitle,
+      description: newDescription,
       tagId: tagid,
       userId: req.session.userId,
       picture: `/uploads/${req.file.filename}`,
@@ -66,10 +75,18 @@ router.post("/", authorize, upload.single("picture"), async (req, res) => {
 // withAuth
 router.put("/:id", authorize, async (req, res) => {
   try {
-    const [affectedRows] = await Post.update(req.body, {
+    let body = {}
+    const emptyTitle = req.body.title.replace(/\s+/g, '');
+    const emptyDescription = req.body.description.replace(/\s+/g, '')
+    if (req.body.title&&emptyTitle){
+      body.title = req.body.title
+    }
+    if (req.body.description&&emptyDescription){
+      body.description = req.body.description
+    }
+    const [affectedRows] = await Post.update(body, {
       where: {
         id: req.params.id,
-        // userId:1
         userId: req.session.userId,
       },
     });
@@ -90,8 +107,7 @@ router.delete("/:id", authorize, async (req, res) => {
     const deletedPost = await Post.destroy({
       where: {
         id: req.params.id,
-        // user_id:1
-        // user_id: req.session.user_id,
+        
       },
     });
 

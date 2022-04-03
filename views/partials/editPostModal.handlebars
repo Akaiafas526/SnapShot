@@ -25,12 +25,13 @@
             <div class="align-items-center">
               {{! <div>Edit Post</div> }}
               <div>Title:</div>
-              <input class="post-title form-control" type="text" name="title" />
+              <input class="post-title form-control" type="text" name="title" maxlength="250"/>
               <div>Decription</div>
               <textarea
                 class="description-box form-control"
                 name="description"
                 aria-label="With textarea"
+                maxlength="250"
               ></textarea>
               {{! <input class="description-box" type="text" name="description"> }}
               <div class="modal-footer">
