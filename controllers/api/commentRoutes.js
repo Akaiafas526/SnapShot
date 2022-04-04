@@ -5,7 +5,7 @@ const authorize = require("../../utils/auth");
 // withAuth
 router.post("/", authorize, async (req, res) => {
   try {
-    console.log(req.body, "<------------------->");
+    // console.log(req.body, "<------------------->");
     const newComment = await Comment.create({
       ...req.body,
       userId: req.session.userId,
@@ -41,7 +41,7 @@ router.put("/:id", authorize, async (req, res) => {
 // withAuth
 router.delete("/:id", authorize, async (req, res) => {
   try {
-    console.log(req.params.id, "helloooooooo");
+    // console.log(req.params.id, "helloooooooo");
     const deletedComment = await Comment.destroy({
       where: {
         id: req.params.id,
