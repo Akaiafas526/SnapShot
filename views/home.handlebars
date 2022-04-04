@@ -1,7 +1,7 @@
 <div class="navigation d-flex text-white justify-content-between align-items-center mx-5 my-5 flex-wrap">
   <div class="profile-container">
 
- <a href="/user/{{userId}}" class="text-white fs-2 profile"><p>My Profile</p></a>
+ <a href="/user/{{userId}}" class="text-white fs-2 profile"><p>My Posts</p></a>
   </div>
   <div class="projectName-container">
     <h1 class="projectName my-0 display-2">SnapShot</h1>
@@ -14,7 +14,7 @@
 
 
 
-<div class="tagAndProfile align-items-center d-flex justify-content-around">
+<div class="tagAndProfile align-items-center d-flex justify-content-center">
    <button type="button" class="newPostBtn rounded py-1 px-2 fs-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Add New Post
   </button>
@@ -29,9 +29,13 @@
   </select>
 </div>
 <div class="container d-flex flex-wrap justify-content-center">
+  {{#if post}}
   {{#each post}}
   {{>posts}}
   {{/each}}
+  {{else}}
+  <h1 class="display-3 text-white text-center mt-3">No Posts</h1>
+  {{/if}}
 
 </div>
 {{!-- Modal for new post --}}
