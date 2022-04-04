@@ -12,7 +12,7 @@ const editCommentText =document.querySelector('#edit-comment-text');
 const postTitle = document.querySelector('.single-post-title');
 const postDescription = document.querySelector('.single-post-text');
 
-console.log(deleteCommentModalBtn)
+// console.log(deleteCommentModalBtn)
 let deleteModal = new bootstrap.Modal(document.getElementById('deleteCommentModal'), {});
 let editModal = new bootstrap.Modal(document.getElementById('editCommentModal'), {});
 
@@ -65,7 +65,7 @@ else{
 }
 async function editConfirmed(e){
   e.preventDefault()
-  console.log(editCommentText.value)
+  // console.log(editCommentText.value)
   const newText =  editCommentText.value
   if (newText.replace(/\s+/g, '')===''){
     return
@@ -88,7 +88,7 @@ else{
 function deleteComment(e){
   e.preventDefault()
   e.stopPropagation()
-  console.log(e,e.target.dataset.id)
+  // console.log(e,e.target.dataset.id)
   commentid = e.target.dataset.id
     deleteModal.show()
     
@@ -97,7 +97,7 @@ function editComment(e){
   e.preventDefault()
   e.stopPropagation()
   editCommentText.placeholder = e.target.parentElement.children[1].textContent
-  console.log(e,e.target.dataset.id)
+  // console.log(e,e.target.dataset.id)
   commentid = e.target.dataset.id
     editModal.show()
     

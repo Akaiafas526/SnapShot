@@ -1,6 +1,6 @@
 module.exports = {
   format_date: (date) => {
-    console.log(date, "DATE   ASDASD ASDADS");
+    // console.log(date, "DATE   ASDASD ASDADS");
     let hour = date.getHours() + 1;
     // let timeOfDay;
     // if(hour>12){

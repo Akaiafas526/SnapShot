@@ -6,13 +6,13 @@ const validFileTypes = ['png','jpg','gif','jpeg']
 const data = new FormData();
 const tagEl = document.querySelectorAll('.tags');
 
-console.log(tagEl )
+// console.log(tagEl )
 
 
 // Checks for picture extension
 function checkExtension (file) {
     const fileExt = file.name.split('.')
-    if (!validFileTypes.includes(fileExt[fileExt.length-1])){
+    if (!validFileTypes.includes(fileExt[fileExt.length-1].toLowerCase())){
         alert('INVALID FILE TYPE')
         return false
     }
@@ -24,7 +24,7 @@ function checkExtension (file) {
 formEl.addEventListener('change',(e)=>{
     e.preventDefault()
     const file = e.target.files
-    console.log(file,'file')
+    // console.log(file,'file')
     if (file?.length){
         const picture = checkExtension(file[0])
         if (!picture){
@@ -51,7 +51,7 @@ formEl.addEventListener('submit',async (e)=>{
             data.append('title',e.target[0].value)
             data.append('description',e.target[2].value)
             data.append('tagId',e.target[3].value)
-            console.log(data)
+            // console.log(data)
             const response = await fetch('/api/post',{
                 method:'POST',
                 body:data
