@@ -60,11 +60,12 @@ router.get("/tag/:id", authorize, async (req, res) => {
       },
     });
     const tags = await Tag.findAll();
-
+    const current = await Tag.findByPk(req.params.id)
     const post = posts.map((post) => post.get({ plain: true }));
     const tag = tags.map((tag) => tag.get({ plain: true }));
+    const currentTag = current.get({ plain: true });
     // console.log(post, tag);
-    res.render("postByTag", { post, tag, userId: req.session.userId });
+    res.render("postByTag", { post, tag, userId: req.session.userId,currentTag:currentTag });
   } catch (err) {
     res.status(400).json(err);
   }
