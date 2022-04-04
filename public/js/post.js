@@ -57,7 +57,7 @@ formEl.addEventListener('submit',async (e)=>{
                 body:data
             })
             if (response.ok){
-                document.location.reload();
+                document.location.assign('/');
             }
             else {
                 console.log('Unable to add file')
