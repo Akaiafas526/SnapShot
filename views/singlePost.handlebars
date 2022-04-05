@@ -1,22 +1,19 @@
 <div class="navigation d-flex text-white justify-content-between align-items-center mx-5 my-5 flex-wrap">
-<div class="singlePostNav d-flex justify-content-between">
-    <div class="home-container">
-
-<a type="button" href='/' value="Home" class="text-white fs-2 profile"><p>Home</p></a>
+    <div class="singlePostNav d-flex justify-content-between">
+        <div class="home-container">
+            <a type="button" href='/' value="Home" class="text-white fs-2 profile"><p>Home</p></a>
+        </div>
+        <div class="profile-container">
+            <a href="/user/{{userId}}" class="text-white fs-2 profile"><p>My Posts</p></a>
+        </div>
     </div>
-<div class="profile-container">
-
- <a href="/user/{{userId}}" class="text-white fs-2 profile"><p>My Profile</p></a>
-  </div>
-</div>
-<div class="logout-container">
-
-  <a class="text-decoration-none text-white fs-2 " href="#" id="logout"><p>Logout</p></a>
-  </div>
-
-
+    <div class="logout-container">
+        <a class="text-decoration-none text-white fs-2 " href="#" id="logout"><p>Logout</p></a>
+    </div>
 </div>
 
+
+{{!-- data-postId is id of current post --}}
 <div class="d-flex flex-column align-items-center justify-content-center post w-100" data-postId="{{post.id}}">
     <div class="text-white d-flex flex-column  justify-content-center">
         <h2 class="display-3 text-center single-post-title">{{post.title}}</h2>
@@ -40,26 +37,29 @@
 
         {{>newCommentModal}}
 
-{{#if isOwner.valid}}
+{{!-- Displays edit button if current user id matches post user id --}}
+    {{#if isOwner.valid}}
         <!-- EDIT Button trigger modal -->
         <button type="button" class=" single-post-button btn" data-bs-toggle="modal" data-bs-target="#editModal">
             Edit Post
         </button>
-{{/if}}
+    {{/if}}
         
 
 {{>editPostModal}}
 
-{{#if isOwner.valid}}
+{{!-- Displays delete button if current user id matches post user id --}}
+    {{#if isOwner.valid}}
         <!-- DELETE Button trigger modal -->
         <button type="button" class=" single-post-button btn" data-bs-toggle="modal" data-bs-target="#deleteModal" >
             Delete Post
         </button>
-{{/if}}
+    {{/if}}
         
-</div>
+    </div>
     {{>deletePostModal}}
 
+        {{!-- Comment area displayed only if there are comments --}}
         {{#if post.comments}}
         <div id="comment-box" class="comment-box-single">
             {{#each post.comments as |comment|}}
@@ -70,10 +70,7 @@
             {{>editCommentModal}}
             {{>deleteCommentModal}}
             
-
-
-
-    
+  
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

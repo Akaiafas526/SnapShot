@@ -1,40 +1,47 @@
 <div class="navigation d-flex text-white justify-content-between align-items-center mx-5 my-5 flex-wrap">
   <div class="profile-container">
 
- <a href="/user/{{userId}}" class="text-white fs-2 profile"><p>My Profile</p></a>
+    <a href="/user/{{userId}}" class="text-white fs-2 profile"><p>My Posts</p></a>
   </div>
   <div class="projectName-container">
     <h1 class="projectName my-0 display-2">SnapShot</h1>
   </div>
   <div class="logout-container">
-
-  <a class="text-decoration-none text-white fs-2 " href="#" id="logout"><p>Logout</p></a>
+    <a class="text-decoration-none text-white fs-2 " href="#" id="logout"><p>Logout</p></a>
   </div>
 </div>
 
 
 
 <div class="tagAndProfile align-items-center d-flex justify-content-around">
-   <button type="button" class="newPostBtn rounded py-1 px-2 fs-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+   <button type="button" class="newPostBtn rounded py-1 px-2 fs-3 d-flex justify-content-center" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Add New Post
   </button>
 
-  <select class="tags form-select tagDropdown my-auto" aria-label="Default select example" name="tags">
+  <select class="tags form-select tagDropdown my-auto d-flex justify-content-end" aria-label="Default select example" name="tags">
     <option disabled selected value>Filter by Hashtag</option>
     <option value="all" name="all">all</option>
-    {{#each tag}}
 
-    <option value={{id}}>#{{name}}</option>
+    {{!-- Option for each tag --}}
+    {{#each tag}}
+      <option value={{id}}>#{{name}}</option>
     {{/each}}
   </select>
 </div>
+
+{{!-- All posts - Checks if no posts --}}
 <div class="container d-flex flex-wrap justify-content-center">
-  {{#each post}}
-  {{>posts}}
-  {{/each}}
+  {{#if post}}
+    {{#each post}}
+    {{>posts}}
+    {{/each}}
+  {{else}}
+    <h1 class="display-3 text-white text-center mt-3">No Posts</h1>
+  {{/if}}
 
 </div>
-{{!-- Modal for new post --}}
+
+{{!-- New post modal --}}
 {{>newPost}}
 
 </div>
