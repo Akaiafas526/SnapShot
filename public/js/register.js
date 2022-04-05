@@ -1,5 +1,7 @@
 let myModal = new bootstrap.Modal(document.getElementById('registerModal'), {});
 
+
+// Form sent to create a new user
 const registerFormHandler = async function(event){
     event.preventDefault();
 
@@ -17,9 +19,12 @@ const registerFormHandler = async function(event){
         headers: { 'Content-Type': 'application/json'},
     });
     
+    // If success, redirects to home page
     if(response.ok){
         document.location.replace('/');
     } else {
+
+        // Error modal for failure to register
         myModal.show()
     }
 };

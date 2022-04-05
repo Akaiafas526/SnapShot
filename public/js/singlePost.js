@@ -12,21 +12,26 @@ const editCommentText =document.querySelector('#edit-comment-text');
 const postTitle = document.querySelector('.single-post-title');
 const postDescription = document.querySelector('.single-post-text');
 
-// console.log(deleteCommentModalBtn)
+
 let deleteModal = new bootstrap.Modal(document.getElementById('deleteCommentModal'), {});
 let editModal = new bootstrap.Modal(document.getElementById('editCommentModal'), {});
 
-
+// Adds even listener for every delete and edit button in the comment section
 deleteCommentBtn.forEach(( btn) => {
   btn.addEventListener('click', deleteComment)
 })
 editCommentBtn.forEach(( btn) => {
   btn.addEventListener('click', editComment)
 })
+
+// Adds eventlisterner for the delete and edit button in the modal
 deleteCommentModalBtn.addEventListener('click',deleteConfirmed)
 editCommentModal.addEventListener('submit',editConfirmed)
+
+// Post id for currently selected post
 const postId = post.getAttribute('data-postId')
 
+// Grabs the current post title and description and sets it as the placeholder for editing
 const titleEl = document.querySelector('.post-title')
 const descriptionEl = document.querySelector('.description-box')
 titleEl.placeholder=postTitle.textContent
@@ -35,6 +40,7 @@ descriptionEl.placeholder=postDescription.textContent;
 
 let commentid;
 
+// Deletes post based on current post id
 async function deletePost()  {
     const data = await fetch(`/api/post/${postId}`, {
         method: 'DELETE',
@@ -50,11 +56,14 @@ async function deletePost()  {
 deleteBtn.addEventListener('click', deletePost)
 
 
+// Processes the deletion of the comment
 async function deleteConfirmed(){
   const data = await fetch(`/api/comment/${commentid}`, {
     method: 'DELETE',
     headers: { 'Content-type': 'application/json' },
 })
+
+// Returns the the current post
 if (data.ok){
 
   document.location.assign(`/posts/${postId}`);
@@ -63,9 +72,12 @@ else{
   console.log('ERROR')
 }
 }
+
+// Processes the comment update
 async function editConfirmed(e){
   e.preventDefault()
-  // console.log(editCommentText.value)
+  
+  // Checks for empty string
   const newText =  editCommentText.value
   if (newText.replace(/\s+/g, '')===''){
     return
@@ -77,6 +89,7 @@ async function editConfirmed(e){
 })
 if (data.ok){
 
+  // Returns to current post
   document.location.assign(`/posts/${postId}`);
 } 
 else{
@@ -84,28 +97,29 @@ else{
 }
 }
 
-
+// Sets the id of the comment to the id of the button pressed and opens modal to confirm
 function deleteComment(e){
   e.preventDefault()
   e.stopPropagation()
-  // console.log(e,e.target.dataset.id)
+  
   commentid = e.target.dataset.id
     deleteModal.show()
     
 }
+
+// Sets the id of the comment to the id of the button pressed and sets placeholder text to the current comment text
+// Opens edit modal to enter information and edit
 function editComment(e){
   e.preventDefault()
   e.stopPropagation()
   editCommentText.placeholder = e.target.parentElement.children[1].textContent
-  // console.log(e,e.target.dataset.id)
+  
   commentid = e.target.dataset.id
     editModal.show()
     
 }
 
-
-// single-post-title
-
+// Edits post by post id
 eFormEl.addEventListener("submit", async (e) => {
   e.preventDefault();
   const title = document.querySelector('.post-title').value
@@ -134,9 +148,11 @@ eFormEl.addEventListener("submit", async (e) => {
 
 
 
-
+// Creates a comment for the post selected
 cFormEl.addEventListener("submit", async (e) => {
   e.preventDefault();
+  
+  // Checks for empty string
   if (e.target[2].value.replace(/\s+/g, '')===''){
     return
   }

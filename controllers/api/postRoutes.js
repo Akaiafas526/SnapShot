@@ -37,27 +37,29 @@ const upload = multer({
   },
 });
 
-// withAuth
+// Creates post
 router.post("/", authorize, upload.single("picture"), async (req, res) => {
   try {
-    console.log(req.body)
+
+    // Check for empty string
     let newTitle = req.body.title;
     let newDescription = req.body.description;
     const emptyTitle = req.body.title.replace(/\s+/g, '');
     const emptyDescription = req.body.description.replace(/\s+/g, '')
+
     if (!emptyTitle){
       newTitle = 'Utitled'
     }
     if (!emptyDescription){
       newDescription = 'No description'
     }
-    console.log(newTitle,newDescription,'hello')
+    
+    // Check if no tag selected
     if (req.body.tagId === "all" || !req.body.tagId) {
       tagid = null;
     } else {
       tagid = req.body.tagId;
     }
-    console.log(req.body)
     const newPost = await Post.create({
       title: newTitle,
       description: newDescription,
@@ -72,9 +74,11 @@ router.post("/", authorize, upload.single("picture"), async (req, res) => {
   }
 });
 
-// withAuth
+// Edits post
 router.put("/:id", authorize, async (req, res) => {
   try {
+
+    // Check for empty sting
     let body = {}
     const emptyTitle = req.body.title.replace(/\s+/g, '');
     const emptyDescription = req.body.description.replace(/\s+/g, '')
@@ -84,6 +88,7 @@ router.put("/:id", authorize, async (req, res) => {
     if (req.body.description&&emptyDescription){
       body.description = req.body.description
     }
+
     const [affectedRows] = await Post.update(body, {
       where: {
         id: req.params.id,
@@ -91,6 +96,7 @@ router.put("/:id", authorize, async (req, res) => {
       },
     });
 
+    // If post was updated
     if (affectedRows) {
       res.status(200).json("Post updated!");
     } else {
@@ -100,7 +106,7 @@ router.put("/:id", authorize, async (req, res) => {
     res.status(400).json(err);
   }
 });
-// withAuth
+// deletes post
 router.delete("/:id", authorize, async (req, res) => {
   try {
     const postPicture = await Post.findByPk(req.params.id);
